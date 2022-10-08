@@ -15,9 +15,8 @@ export default function ExperienceComponent({ experiences }: ExperienceProps) {
         <div className="grid grid-cols-1 dark:bg-gray-900 max-w-xl mx-auto pt-20">
           {/* Experience card */}
           {experiences.map((exp, idx) => (
-            <>
+            <div key={idx}>
               <ExperienceCard
-                key={idx}
                 title={exp.title}
                 desc={exp.desc}
                 year={exp.year}
@@ -25,14 +24,14 @@ export default function ExperienceComponent({ experiences }: ExperienceProps) {
                 companyLink={exp.companyLink}
               />
               {idx === experiences.length - 1 ? null : (
-                <div key={'divider_' + idx} className="divider-container flex flex-col items-center -mt-2">
+                <div className="divider-container flex flex-col items-center -mt-2">
                   <div className="w-4 h-4 bg-green-500 rounded-full relative z-10">
                     <div className="w-4 h-4 bg-green-500 rounded-full relative z-10 animate-ping"></div>
                   </div>
                   <div className="w-1 h-24 bg-gray-200 dark:bg-gray-500 rounded-full -mt-2"></div>
                 </div>
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>

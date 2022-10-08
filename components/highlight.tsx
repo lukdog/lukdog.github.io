@@ -3,12 +3,11 @@ import { RoughNotation } from 'react-rough-notation';
 
 type HighlightProps = {
   color: string;
+  duration: number;
   children?: JSX.Element;
 };
 
-export default function Highlight({ color, children }: HighlightProps) {
-  const duration = Math.floor(40 * Children.count(children));
-
+export default function Highlight({ color, children, duration }: HighlightProps) {
   return (
     <RoughNotation
       type="highlight"

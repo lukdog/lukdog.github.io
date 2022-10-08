@@ -5,20 +5,20 @@ import HeroBanner, { ColoredTitle } from '../components/herobanner';
 import { SocialLinks } from '../types/global';
 
 const titles: ColoredTitle[] = [
-  { title: 'Hello', color: '#F56565' },
-  { title: "I'm", color: '#ED8936' },
-  { title: 'LukDog', color: '#ECC94B' },
+  { title: "Hello, I'm", color: '#14B8A6' },
+  { title: 'Luca', color: '#F56565' },
+  { title: 'Doglione', color: '#ED8936' },
 ];
 
 const socials: SocialLinks = {
   github: 'https://github.com/LukDog',
   instagram: 'https://instagram.com/lukdog8',
-  linkedin: 'https://inkedin.com/in/lucadoglione',
+  linkedin: 'https://it.linkedin.com/in/lucadoglione',
 };
 
 const Home: NextPage = () => {
   return (
-    <Container socials={socials}>
+    <Container socials={socials} name="Luca Doglione">
       <HeroBanner titles={titles} profilePicUrl="./IMG_5454.png"></HeroBanner>
       <About
         intro="Software Engineer passionate about web and mobile development"
