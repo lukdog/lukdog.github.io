@@ -19,39 +19,39 @@ const socials: SocialLinks = {
 const techSkills: TechSkill[] = [
   {
     name: 'JavaScript',
-    iconUrl: './tech-icons/js.svg',
+    iconUrl: '/tech-icons/js.svg',
   },
   {
     name: 'Typescript',
-    iconUrl: './tech-icons/typescript.svg',
+    iconUrl: '/tech-icons/typescript.svg',
   },
   {
     name: 'go',
-    iconUrl: './tech-icons/go.svg',
+    iconUrl: '/tech-icons/go.svg',
   },
   {
     name: 'ReactJs',
-    iconUrl: './tech-icons/reactjs.svg',
+    iconUrl: '/tech-icons/reactjs.svg',
   },
   {
     name: 'NodeJs',
-    iconUrl: './tech-icons/nodejs.svg',
+    iconUrl: '/tech-icons/nodejs.svg',
   },
   {
     name: 'Auth0',
-    iconUrl: './tech-icons/auth0.svg',
+    iconUrl: '/tech-icons/auth0.svg',
   },
   {
     name: 'AWS',
-    iconUrl: './tech-icons/aws.svg',
+    iconUrl: '/tech-icons/aws.svg',
   },
   {
     name: 'Tailwind',
-    iconUrl: './tech-icons/tailwind.svg',
+    iconUrl: '/tech-icons/tailwind.svg',
   },
   {
     name: 'NextJS',
-    iconUrl: './tech-icons/nextjs.svg',
+    iconUrl: '/tech-icons/nextjs.svg',
   },
 ];
 

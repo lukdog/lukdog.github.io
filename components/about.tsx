@@ -1,6 +1,7 @@
 import React from 'react';
 import { SocialLinks } from '../types/global';
 import { TechSkill } from '../types/global';
+import Image from 'next/image';
 import Page from './page';
 
 type AboutProps = {
@@ -59,7 +60,7 @@ export default function About({
               <div className="mt-8">
                 <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Job Opportunities</h1>
                 <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                  I'm looking for a job currently, If you see me as a good fit, check my{' '}
+                  I&aposm looking for a job currently, If you see me as a good fit, check my{' '}
                   <a
                     href={resumeUrl}
                     target="__blank"
@@ -101,7 +102,7 @@ export default function About({
                 </h1>
                 <div className="flex flex-row flex-wrap mt-8">
                   {techSkills.map((skill, idx) => (
-                    <img src={skill.iconUrl} key={idx} alt={skill.name} className="h-20 w-20" />
+                    <Image src={skill.iconUrl} height="80" width="80" key={idx} alt={skill.name} />
                   ))}
                 </div>
               </div>
