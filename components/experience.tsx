@@ -1,5 +1,6 @@
 import React from 'react';
 import { Experience } from '../types/global';
+import Page from './page';
 
 type ExperienceProps = {
   experiences: Experience[];
@@ -7,10 +8,7 @@ type ExperienceProps = {
 
 export default function ExperienceComponent({ experiences }: ExperienceProps) {
   return (
-    <div className="bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
-        <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left">Experience</h1>
-      </div>
+    <Page title="Experience">
       <div className="bg-[#F1F1F1] dark:bg-gray-900 -mt-4">
         <div className="grid grid-cols-1 dark:bg-gray-900 max-w-xl mx-auto pt-20">
           {/* Experience card */}
@@ -35,7 +33,7 @@ export default function ExperienceComponent({ experiences }: ExperienceProps) {
           ))}
         </div>
       </div>
-    </div>
+    </Page>
   );
 }
 
