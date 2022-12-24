@@ -2,12 +2,12 @@ import type { NextPage } from 'next';
 import About from '../components/about';
 import Container from '../components/container';
 import HeroBanner, { ColoredTitle } from '../components/herobanner';
-import { SocialLinks } from '../types/global';
+import { SocialLinks, TechSkill } from '../types/global';
 
 const titles: ColoredTitle[] = [
-  { title: "Hello, I'm", color: '#14B8A6' },
-  { title: 'Luca', color: '#F56565' },
-  { title: 'Doglione', color: '#ED8936' },
+  { title: 'Hello,', color: '#14B8A6' },
+  { title: "I'm", color: '#F56565' },
+  { title: 'Luca.', color: '#ED8936' },
 ];
 
 const socials: SocialLinks = {
@@ -15,6 +15,45 @@ const socials: SocialLinks = {
   instagram: 'https://instagram.com/lukdog8',
   linkedin: 'https://it.linkedin.com/in/lucadoglione',
 };
+
+const techSkills: TechSkill[] = [
+  {
+    name: 'JavaScript',
+    iconUrl: './tech-icons/js.svg',
+  },
+  {
+    name: 'Typescript',
+    iconUrl: './tech-icons/typescript.svg',
+  },
+  {
+    name: 'go',
+    iconUrl: './tech-icons/go.svg',
+  },
+  {
+    name: 'ReactJs',
+    iconUrl: './tech-icons/reactjs.svg',
+  },
+  {
+    name: 'NodeJs',
+    iconUrl: './tech-icons/nodejs.svg',
+  },
+  {
+    name: 'Auth0',
+    iconUrl: './tech-icons/auth0.svg',
+  },
+  {
+    name: 'AWS',
+    iconUrl: './tech-icons/aws.svg',
+  },
+  {
+    name: 'Tailwind',
+    iconUrl: './tech-icons/tailwind.svg',
+  },
+  {
+    name: 'NextJS',
+    iconUrl: './tech-icons/nextjs.svg',
+  },
+];
 
 const Home: NextPage = () => {
   return (
@@ -32,6 +71,7 @@ const Home: NextPage = () => {
         currentCompany="Arduino CC"
         currentCompanyUrl="https://arduino.cc"
         socialLinks={socials}
+        techSkills={techSkills}
       />
     </Container>
   );

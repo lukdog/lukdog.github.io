@@ -16,7 +16,7 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
   console.log(router.asPath);
 
   return (
-    <div className={classnames(className, 'max-w-6xl  mx-auto px-4 py-10 md:py-20')}>
+    <div className={classnames(className, 'max-w-6xl  mx-auto px-4 py-10')}>
       <div className="flex  md:flex-row justify-between items-center">
         {/* Logo / Home / Text */}
 

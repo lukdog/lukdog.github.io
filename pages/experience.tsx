@@ -31,7 +31,7 @@ const experiences: Experience[] = [
 
 const Experience: NextPage = function () {
   return (
-    <Container>
+    <Container name="Luca Doglione">
       <ExperienceComponent experiences={experiences} />
     </Container>
   );

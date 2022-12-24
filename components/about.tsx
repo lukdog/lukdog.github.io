@@ -1,5 +1,6 @@
 import React from 'react';
 import { SocialLinks } from '../types/global';
+import { TechSkill } from '../types/global';
 
 type AboutProps = {
   intro: string;
@@ -10,6 +11,7 @@ type AboutProps = {
   currentCompany: string;
   searchingForJob?: boolean;
   socialLinks?: SocialLinks;
+  techSkills?: TechSkill[];
 };
 
 export default function About({
@@ -19,8 +21,9 @@ export default function About({
   resumeUrl,
   currentCompanyUrl,
   currentCompany,
-  socialLinks,
   searchingForJob = false,
+  socialLinks,
+  techSkills,
 }: AboutProps) {
   return (
     <section className="bg-white dark:bg-gray-800">
@@ -44,7 +47,7 @@ export default function About({
             <div>
               <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Contact</h1>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                For any question, send an{' '}
+                For any question, send a{' '}
                 <a
                   href={`mailto:${email}`}
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
@@ -92,57 +95,19 @@ export default function About({
               </p>
             ))}
 
-            <h1 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">Tech Stack</h1>
-            <div className="flex flex-row flex-wrap mt-8">
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/java/java.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/angular/angular.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongodb/mongodb.png"
-                className="h-10 w-10 mx-2 my-2"
-              />
-            </div>
+            {/* Tech Stack */}
+            {techSkills && (
+              <div>
+                <h1 className="bg-teal-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
+                  Tech Stack
+                </h1>
+                <div className="flex flex-row flex-wrap mt-8">
+                  {techSkills.map((skill, idx) => (
+                    <img src={skill.iconUrl} key={idx} alt={skill.name} className="h-20 w-20" />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
