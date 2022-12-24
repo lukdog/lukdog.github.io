@@ -39,3 +39,6 @@ jspm_packages
 
 #exported dir
 out
+
+#macos
+*.DS_Store

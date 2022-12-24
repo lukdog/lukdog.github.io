@@ -58,7 +58,7 @@ const techSkills: TechSkill[] = [
 const Home: NextPage = () => {
   return (
     <Container socials={socials} name="Luca Doglione">
-      <HeroBanner titles={titles} profilePicUrl="./IMG_5454.png"></HeroBanner>
+      <HeroBanner titles={titles} profilePicUrl="/IMG_5454.png"></HeroBanner>
       <About
         intro="Software Engineer passionate about web and mobile development"
         email="l.doglione@mail.cc"

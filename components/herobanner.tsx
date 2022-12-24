@@ -1,6 +1,7 @@
 import React from 'react';
 import { RoughNotationGroup } from 'react-rough-notation';
 import Highlight from './highlight';
+import Image from 'next/image';
 
 export type ColoredTitle = {
   color: string;
@@ -29,7 +30,7 @@ export default function HeroBanner({ titles, profilePicUrl }: HeroBannerProps) {
 
       <div className="hidden lg:block relative w-full md:w-1/2 -mr-30 mt-20">
         <div className="w-3/4 ">
-          <img src={profilePicUrl} alt="avatar" className="rounded shadow" />
+          <Image src={profilePicUrl} height="1333" width="1000" alt="avatar" className="rounded shadow" />
           <div className="flex flex-row justify-between mt-4">
             <div className="flex flex-row space-x-4">
               <svg
@@ -45,7 +46,7 @@ export default function HeroBanner({ titles, profilePicUrl }: HeroBannerProps) {
                   d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
                 />
               </svg>
-              <p className="font-mono">That's me</p>
+              <p className="font-mono">That&apos;s me</p>
             </div>
           </div>
         </div>

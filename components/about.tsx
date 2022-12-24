@@ -53,14 +53,14 @@ export default function About({
                 >
                   mail
                 </a>{' '}
-                and I'll get back. I swear.
+                and I&aposll get back. I swear.
               </p>
             </div>
             {searchingForJob && (
               <div className="mt-8">
                 <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Job Opportunities</h1>
                 <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                  I&aposm looking for a job currently, If you see me as a good fit, check my{' '}
+                  I&apos;m looking for a job currently, If you see me as a good fit, check my{' '}
                   <a
                     href={resumeUrl}
                     target="__blank"
