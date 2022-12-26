@@ -63,9 +63,9 @@ const Home: NextPage = () => {
         intro="Software Engineer passionate about web and mobile development"
         email="l.doglione@mail.cc"
         description={[
-          "I've been developing full-stack application since I was 10 years old. I didn't know what full-stack meant at that time because the term was not coined back then. I'm so out of content right now that I'm literally crying writing this text since lorem text is so 2012 now.",
-          "After learning HTML and struggling with CSS, I came up with a brilliant idea of using bootstrap so that I don't have to style everything by myself and - for obvious reasons - if you knew bootstrap, you were cool.",
-          "But now, I'm a legend. I've been coding in React, Angular, Vue, Svelte, Node.js, Express, Fastify, MongoDB, MySQL, Bootstrap, Tailwind, C, C++, C#, Rust, Haskell, Perl, PHP, Assembly, Logo and YouDontKnowShit programming language etc to name a few. Although I barely know the syntax (Psst, Stack overflow!), I consider myself a Ninja developer I'm laughing right now.",
+          'As a Senior Software Developer with a passion for Information Technology and software development from the age of 16, I have dedicated my career to becoming a skilled and specialized developer. With a focus on front-end and mobile application development.',
+          'Throughout my career, I have had the opportunity to work on a variety of projects. My strong problem-solving skills and attention to detail have allowed me to consistently deliver high-quality work on time and to specification.',
+          'I am also a highly collaborative team player, with strong communication skills and a dedication to delivering the best possible user experience. I am always happy to learn new technologies and approaches, and I believe that staying current and up-to-date is crucial for success in the rapidly-evolving field of software development.',
         ]}
         resumeUrl="https://luk.dog"
         currentCompany="Arduino CC"
