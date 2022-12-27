@@ -53,7 +53,7 @@ export default function About({
                 >
                   mail
                 </a>{' '}
-                and I&aposll get back. I swear.
+                and I&apos;ll get back. I swear.
               </p>
             </div>
             {searchingForJob && (

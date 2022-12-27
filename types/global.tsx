@@ -11,7 +11,8 @@ export type Experience = {
   desc: string;
   year: string;
   company: string;
-  companyLink: string;
+  companyLink?: string;
+  techSkills?: TechSkill[];
 };
 
 export type NavigationElement = {
