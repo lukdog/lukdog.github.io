@@ -11,8 +11,8 @@ type ExperienceProps = {
 export default function ExperienceComponent({ experiences }: ExperienceProps) {
   return (
     <Page title="Experience">
-      <div className="bg-[#F1F1F1] dark:bg-gray-900 -mt-4">
-        <div className="grid grid-cols-1 dark:bg-gray-900 max-w-2xl mx-auto pt-32">
+      <div className="-mt-4 bg-[#F1F1F1] dark:bg-gray-900">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 pt-32 dark:bg-gray-900">
           {/* Experience card */}
           {experiences.map((exp, idx) => (
             <div key={idx}>
@@ -25,9 +25,9 @@ export default function ExperienceComponent({ experiences }: ExperienceProps) {
                 techSkills={exp.techSkills}
               />
               {idx === experiences.length - 1 ? null : (
-                <div className="divider-container flex flex-col items-center -mt-2">
-                  <div className="w-4 h-4 bg-orange-600 rounded-full relative z-10"></div>
-                  <div className="w-1 h-24 bg-gray-200 dark:bg-gray-500 rounded-full -mt-2"></div>
+                <div className="divider-container -mt-2 flex flex-col items-center">
+                  <div className="relative z-10 h-4 w-4 rounded-full bg-orange-600"></div>
+                  <div className="-mt-2 h-24 w-1 rounded-full bg-gray-200 dark:bg-gray-500"></div>
                 </div>
               )}
             </div>
@@ -40,12 +40,12 @@ export default function ExperienceComponent({ experiences }: ExperienceProps) {
 
 const ExperienceCard = ({ title, desc, year, company, companyLink, techSkills }: Experience) => {
   return (
-    <div className="relative experience-card border p-4 rounded-md shadow-xl motion-safe:hover:shadow-2xl transition-shadow duration-300 bg-white dark:bg-gray-800 z-10 mx-4">
-      <h1 className="absolute -top-10 md:-left-10 md:-top-10 text-4xl text-orange-600 font-bold dark:text-orange-800">
+    <div className="experience-card relative z-10 mx-4 rounded-md border bg-white p-4 shadow-xl transition-shadow duration-300 motion-safe:hover:shadow-2xl dark:bg-gray-800">
+      <h1 className="absolute -top-10 text-4xl font-bold text-orange-600 dark:text-orange-800 md:-left-10 md:-top-10">
         {year}
       </h1>
       <div>
-        <h1 className="font-semibold text-2xl">{title}</h1>
+        <h1 className="text-2xl font-semibold">{title}</h1>
 
         {/* Company Link */}
         {companyLink ? (
@@ -57,11 +57,11 @@ const ExperienceCard = ({ title, desc, year, company, companyLink, techSkills }:
         )}
       </div>
 
-      <p className="text-gray-600 dark:text-gray-400 my-2">{desc}</p>
+      <p className="my-2 text-gray-600 dark:text-gray-400">{desc}</p>
 
       {/* Tech Stack */}
       {techSkills && (
-        <div className="flex flex-row flex-wrap mt-2 mb-2">
+        <div className="mt-2 mb-2 flex flex-row flex-wrap">
           {techSkills.map((skill, idx) => (
             <Image
               src={skill.iconUrl}

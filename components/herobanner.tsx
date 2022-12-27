@@ -15,23 +15,23 @@ type HeroBannerProps = {
 
 export default function HeroBanner({ titles, profilePicUrl }: HeroBannerProps) {
   return (
-    <div className="flex flex-row justify-center items-start overflow-hidden max-w-screen-xl mx-auto">
-      <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20">
+    <div className="mx-auto flex max-w-screen-xl flex-row items-start justify-center overflow-hidden">
+      <div className="mx-auto w-full text-center md:w-1/2 md:text-left lg:p-20">
         <RoughNotationGroup show={true}>
           {titles.map((el, id) => {
             return (
               <Highlight key={id} color={el.color} duration={250}>
-                <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">{el.title}</h1>
+                <h1 className="my-2 text-4xl font-bold text-gray-700 dark:text-gray-200 md:text-8xl">{el.title}</h1>
               </Highlight>
             );
           })}
         </RoughNotationGroup>
       </div>
 
-      <div className="hidden lg:block relative w-full md:w-1/2 -mr-30 mt-20">
+      <div className="-mr-30 relative mt-20 hidden w-full md:w-1/2 lg:block">
         <div className="w-3/4 ">
           <Image src={profilePicUrl} height="1333" width="1000" alt="avatar" className="rounded shadow" />
-          <div className="flex flex-row justify-between mt-4">
+          <div className="mt-4 flex flex-row justify-between">
             <div className="flex flex-row space-x-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

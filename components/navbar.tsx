@@ -16,24 +16,24 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
   console.log(router.asPath);
 
   return (
-    <div className={classnames(className, 'max-w-6xl  mx-auto px-4 py-10')}>
-      <div className="flex  md:flex-row justify-between items-center">
+    <div className={classnames(className, 'mx-auto  max-w-6xl px-4 py-10')}>
+      <div className="flex  items-center justify-between md:flex-row">
         {/* Logo / Home / Text */}
 
         <div className="flex flex-col">
           <Link href="/">
-            <h1 className="font-semibold text-xl dark:text-gray-100">{name}</h1>
+            <h1 className="text-xl font-semibold dark:text-gray-100">{name}</h1>
             <p className="text-base font-light text-gray-500 dark:text-gray-300">{role}</p>
           </Link>
         </div>
 
-        <div className="space-x-8 hidden md:block">
+        <div className="hidden space-x-8 md:block">
           <Link href="/">
             <span
               className={`text-base  ${
                 router.asPath === '/'
-                  ? 'text-gray-800 font-bold dark:text-gray-400'
-                  : 'text-gray-600 dark:text-gray-300 font-normal '
+                  ? 'font-bold text-gray-800 dark:text-gray-400'
+                  : 'font-normal text-gray-600 dark:text-gray-300 '
               }`}
             >
               About{' '}
@@ -58,8 +58,8 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
             <span
               className={`text-base  ${
                 router.asPath === '/projects'
-                  ? 'text-gray-800 font-bold dark:text-gray-400'
-                  : 'text-gray-600 dark:text-gray-300 font-normal '
+                  ? 'font-bold text-gray-800 dark:text-gray-400'
+                  : 'font-normal text-gray-600 dark:text-gray-300 '
               }`}
             >
               Projects
@@ -84,8 +84,8 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
             <span
               className={`text-base  ${
                 router.asPath === '/experience'
-                  ? 'text-gray-800 font-bold dark:text-gray-400'
-                  : 'text-gray-600 dark:text-gray-300 font-normal '
+                  ? 'font-bold text-gray-800 dark:text-gray-400'
+                  : 'font-normal text-gray-600 dark:text-gray-300 '
               }`}
             >
               Experience{' '}
@@ -110,8 +110,8 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
             <span
               className={`text-base  ${
                 router.asPath === '/contact'
-                  ? 'text-gray-800 font-bold dark:text-gray-400'
-                  : 'text-gray-600 dark:text-gray-300 font-normal '
+                  ? 'font-bold text-gray-800 dark:text-gray-400'
+                  : 'font-normal text-gray-600 dark:text-gray-300 '
               }`}
             >
               Contact
@@ -134,7 +134,7 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
           </Link>
         </div>
         {socialLinks && (
-          <div className="space-x-4 flex flex-row items-center">
+          <div className="flex flex-row items-center space-x-4">
             {socialLinks.instagram && (
               <Link href={socialLinks.instagram} className="text-base font-normal text-gray-600 dark:text-gray-300">
                 <svg
@@ -180,7 +180,7 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
           </div>
         )}
       </div>
-      <div className="space-x-8 block md:hidden mt-4">
+      <div className="mt-4 block space-x-8 md:hidden">
         <Link href="/about">
           <span className="text-base font-normal text-gray-600 dark:text-gray-300">About</span>
         </Link>

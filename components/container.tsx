@@ -12,7 +12,7 @@ type ContainerProps = {
 export default function Container({ children, name, socials }: ContainerProps) {
   return (
     <div>
-      <main className="dark:bg-gray-800 w-full">
+      <main className="w-full dark:bg-gray-800">
         <Navbar name="Luca Doglione" role="Senior SW Developer" socialLinks={socials} />
         <div>{children}</div>
         <Footer socialLinks={socials} name={name} />
