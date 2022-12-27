@@ -64,6 +64,7 @@ const experiences: Experience[] = [
       { name: 'css3', iconUrl: '/tech-icons/css.svg' },
       { name: 'sass', iconUrl: '/tech-icons/sass.svg' },
       { name: 'Javascript', iconUrl: '/tech-icons/js.svg' },
+      { name: 'jQuery', iconUrl: '/tech-icons/jquery.svg' },
       { name: 'Linux', iconUrl: '/tech-icons/linux.svg' },
       { name: 'NodeJs', iconUrl: '/tech-icons/nodejs.svg' },
       { name: 'Jira', iconUrl: '/tech-icons/jira.svg' },
@@ -80,6 +81,7 @@ const experiences: Experience[] = [
       { name: 'css3', iconUrl: '/tech-icons/css.svg' },
       { name: 'sass', iconUrl: '/tech-icons/sass.svg' },
       { name: 'Javascript', iconUrl: '/tech-icons/js.svg' },
+      { name: 'jQuery', iconUrl: '/tech-icons/jquery.svg' },
     ],
   },
   {
