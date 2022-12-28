@@ -26,7 +26,7 @@ export default function ExperienceComponent({ experiences }: ExperienceProps) {
               />
               {idx === experiences.length - 1 ? null : (
                 <div className="divider-container -mt-2 flex flex-col items-center">
-                  <div className="relative z-10 h-4 w-4 rounded-full bg-orange-600"></div>
+                  <div className="relative z-10 h-4 w-4 rounded-full bg-orange-600 dark:brightness-75"></div>
                   <div className="-mt-2 h-24 w-1 rounded-full bg-gray-200 dark:bg-gray-500"></div>
                 </div>
               )}
@@ -40,12 +40,12 @@ export default function ExperienceComponent({ experiences }: ExperienceProps) {
 
 const ExperienceCard = ({ title, desc, year, company, companyLink, techSkills }: Experience) => {
   return (
-    <div className="experience-card relative z-10 mx-4 rounded-md border bg-white p-4 shadow-xl transition-shadow duration-300 motion-safe:hover:shadow-2xl dark:bg-gray-800">
-      <h1 className="absolute -top-10 text-4xl font-bold text-orange-600 dark:text-orange-800 md:-left-10 md:-top-10">
+    <div className="experience-card relative z-10 mx-4 rounded-md border bg-white p-4 shadow-xl transition-shadow duration-300 motion-safe:hover:shadow-2xl dark:border-gray-800 dark:bg-zinc-800">
+      <h1 className="absolute -top-10 text-4xl font-bold text-orange-600 dark:brightness-75 md:-left-10 md:-top-10">
         {year}
       </h1>
       <div>
-        <h1 className="text-2xl font-semibold">{title}</h1>
+        <h1 className="text-2xl font-semibold dark:text-gray-400">{title}</h1>
 
         {/* Company Link */}
         {companyLink ? (
@@ -69,7 +69,7 @@ const ExperienceCard = ({ title, desc, year, company, companyLink, techSkills }:
               width="50"
               key={idx}
               alt={skill.name}
-              className="transition-all duration-300 motion-safe:hover:-translate-y-2"
+              className="transition-all duration-300 motion-safe:hover:-translate-y-2 dark:brightness-75"
             />
           ))}
         </div>

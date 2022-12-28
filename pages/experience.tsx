@@ -8,7 +8,7 @@ import ExperienceComponent from '../components/experience';
 const experiences: Experience[] = [
   {
     title: 'Senior Specialist Software Engineer',
-    desc: "I'm currently responsible of web and mobile teams in Arduino sofftware area. The first one is in charge of many microservices and react applications while the second is currently working on Iot Remote and Science Journal applications. I'm also involved in software architecture, development and review.",
+    desc: "I'm currently responsible of web and mobile teams in Arduino software area. The first one is in charge of many microservices and react applications while the second is currently working on Iot Remote and Science Journal applications. I'm also involved in software architecture, development and review.",
     year: '2022',
     company: 'Arduino',
     companyLink: 'https://arduino.cc/',

@@ -29,7 +29,7 @@ export default function About({
 }: AboutProps) {
   return (
     <Page title="About Me">
-      <div className="-mt-10 bg-[#F1F1F1] dark:bg-gray-900">
+      <div className="-mt-4 bg-[#F1F1F1] dark:bg-gray-900">
         <div className="text-container mx-auto max-w-6xl pt-20 dark:text-gray-300">
           <p className="mx-4 text-2xl font-semibold leading-loose  md:text-4xl" style={{ lineHeight: '3rem' }}>
             {intro}. <br /> Currently employed in{' '}
