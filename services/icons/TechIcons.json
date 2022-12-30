@@ -1,0 +1,335 @@
+{
+    "adobe": {
+        "light": "/icons/tech/adobe.svg"
+    },
+    "ae": {
+        "light": "/icons/tech/ae.svg"
+    },
+    "ai": {
+        "light": "/icons/tech/ai.svg"
+    },
+    "airtable": {
+        "light": "/icons/tech/airtable.svg"
+    },
+    "amazonwebservices": {
+        "light": "/icons/tech/amazonwebservices.svg"
+    },
+    "analytics": {
+        "light": "/icons/tech/analytics.svg"
+    },
+    "android": {
+        "light": "/icons/tech/android.svg"
+    },
+    "angular": {
+        "light": "/icons/tech/angular.svg"
+    },
+    "apache": {
+        "light": "/icons/tech/apache.svg"
+    },
+    "atlassian": {
+        "light": "/icons/tech/atlassian.svg"
+    },
+    "auth0": {
+        "light": "/icons/tech/auth0.svg"
+    },
+    "aws-ec2": {
+        "light": "/icons/tech/aws-ec2.svg"
+    },
+    "aws": {
+        "light": "/icons/tech/aws.svg"
+    },
+    "axure": {
+        "light": "/icons/tech/axure.svg"
+    },
+    "azure": {
+        "light": "/icons/tech/azure.svg"
+    },
+    "babel": {
+        "light": "/icons/tech/babel.svg"
+    },
+    "backbonejs": {
+        "light": "/icons/tech/backbonejs.svg"
+    },
+    "bitbucker": {
+        "light": "/icons/tech/bitbucker.svg"
+    },
+    "bootstrap": {
+        "light": "/icons/tech/bootstrap.svg"
+    },
+    "bootstrap4": {
+        "light": "/icons/tech/bootstrap4.svg"
+    },
+    "bootstrap5": {
+        "light": "/icons/tech/bootstrap5.svg"
+    },
+    "bulma-ui": {
+        "light": "/icons/tech/bulma-ui.svg"
+    },
+    "c#": {
+        "light": "/icons/tech/c#.svg"
+    },
+    "c++": {
+        "light": "/icons/tech/c++.svg"
+    },
+    "cakephp": {
+        "light": "/icons/tech/cakephp.svg"
+    },
+    "chrome": {
+        "light": "/icons/tech/chrome.svg"
+    },
+    "cloudinary": {
+        "light": "/icons/tech/cloudinary.svg"
+    },
+    "codeigniter": {
+        "light": "/icons/tech/codeigniter.svg"
+    },
+    "css": {
+        "light": "/icons/tech/css.svg"
+    },
+    "digitalOcean": {
+        "light": "/icons/tech/digitalOcean.svg"
+    },
+    "django": {
+        "light": "/icons/tech/django.svg"
+    },
+    "docker": {
+        "light": "/icons/tech/docker.svg"
+    },
+    "edge": {
+        "light": "/icons/tech/edge.svg"
+    },
+    "electron": {
+        "light": "/icons/tech/electron.svg"
+    },
+    "element-ui": {
+        "light": "/icons/tech/element-ui.svg"
+    },
+    "ember": {
+        "light": "/icons/tech/ember.svg"
+    },
+    "eslint": {
+        "light": "/icons/tech/eslint.svg"
+    },
+    "faunadb": {
+        "light": "/icons/tech/faunadb.svg"
+    },
+    "figma": {
+        "light": "/icons/tech/figma.svg"
+    },
+    "firebase": {
+        "light": "/icons/tech/firebase.svg"
+    },
+    "firefox": {
+        "light": "/icons/tech/firefox.svg"
+    },
+    "flutter": {
+        "light": "/icons/tech/flutter.svg"
+    },
+    "gatsby": {
+        "light": "/icons/tech/gatsby.svg"
+    },
+    "git": {
+        "light": "/icons/tech/git.svg"
+    },
+    "github": {
+        "light": "/icons/tech/github.svg"
+    },
+    "gitlab": {
+        "light": "/icons/tech/gitlab.svg"
+    },
+    "go": {
+        "light": "/icons/tech/go.svg"
+    },
+    "google-cloud": {
+        "light": "/icons/tech/google-cloud.svg"
+    },
+    "graphql": {
+        "light": "/icons/tech/graphql.svg"
+    },
+    "gridsome": {
+        "light": "/icons/tech/gridsome.svg"
+    },
+    "gulp": {
+        "light": "/icons/tech/gulp.svg"
+    },
+    "heroku": {
+        "light": "/icons/tech/heroku.svg"
+    },
+    "hexo": {
+        "light": "/icons/tech/hexo.svg"
+    },
+    "hotjar": {
+        "light": "/icons/tech/hotjar.svg"
+    },
+    "html5": {
+        "light": "/icons/tech/html5.svg"
+    },
+    "id": {
+        "light": "/icons/tech/id.svg"
+    },
+    "ie": {
+        "light": "/icons/tech/ie.svg"
+    },
+    "insomnia": {
+        "light": "/icons/tech/insomnia.svg"
+    },
+    "invision": {
+        "light": "/icons/tech/invision.svg"
+    },
+    "ionic": {
+        "light": "/icons/tech/ionic.svg"
+    },
+    "jamstack": {
+        "light": "/icons/tech/jamstack.svg"
+    },
+    "java": {
+        "light": "/icons/tech/java.svg"
+    },
+    "jest": {
+        "light": "/icons/tech/jest.svg"
+    },
+    "jira": {
+        "light": "/icons/tech/jira.svg"
+    },
+    "jquery": {
+        "light": "/icons/tech/jquery.svg"
+    },
+    "js": {
+        "light": "/icons/tech/js.svg"
+    },
+    "json": {
+        "light": "/icons/tech/json.svg"
+    },
+    "laravel": {
+        "light": "/icons/tech/laravel.svg"
+    },
+    "linux": {
+        "light": "/icons/tech/linux.svg"
+    },
+    "material-ui": {
+        "light": "/icons/tech/material-ui.svg"
+    },
+    "mochajs": {
+        "light": "/icons/tech/mochajs.svg"
+    },
+    "mongodb": {
+        "light": "/icons/tech/mongodb.svg"
+    },
+    "mozilla": {
+        "light": "/icons/tech/mozilla.svg"
+    },
+    "mysql": {
+        "light": "/icons/tech/mysql.svg"
+    },
+    "netlify": {
+        "light": "/icons/tech/netlify.svg"
+    },
+    "nextjs": {
+        "light": "/icons/tech/nextjs.svg"
+    },
+    "nodejs": {
+        "light": "/icons/tech/nodejs.svg"
+    },
+    "npm": {
+        "light": "/icons/tech/npm.svg"
+    },
+    "nuxtjs": {
+        "light": "/icons/tech/nuxtjs.svg"
+    },
+    "php": {
+        "light": "/icons/tech/php.svg"
+    },
+    "postfresql": {
+        "light": "/icons/tech/postfresql.svg"
+    },
+    "postman": {
+        "light": "/icons/tech/postman.svg"
+    },
+    "prettier": {
+        "light": "/icons/tech/prettier.svg"
+    },
+    "ps": {
+        "light": "/icons/tech/ps.svg"
+    },
+    "pugjs": {
+        "light": "/icons/tech/pugjs.svg"
+    },
+    "pwa": {
+        "light": "/icons/tech/pwa.svg"
+    },
+    "python": {
+        "light": "/icons/tech/python.svg"
+    },
+    "rails": {
+        "light": "/icons/tech/rails.svg"
+    },
+    "reactjs": {
+        "light": "/icons/tech/reactjs.svg"
+    },
+    "redis": {
+        "light": "/icons/tech/redis.svg"
+    },
+    "redux": {
+        "light": "/icons/tech/redux.svg"
+    },
+    "ruby": {
+        "light": "/icons/tech/ruby.svg"
+    },
+    "rust": {
+        "light": "/icons/tech/rust.svg"
+    },
+    "sass": {
+        "light": "/icons/tech/sass.svg"
+    },
+    "semantic-ui": {
+        "light": "/icons/tech/semantic-ui.svg"
+    },
+    "sketch-new": {
+        "light": "/icons/tech/sketch-new.svg"
+    },
+    "sketch": {
+        "light": "/icons/tech/sketch.svg"
+    },
+    "solidity": {
+        "light": "/icons/tech/solidity.svg"
+    },
+    "sublime": {
+        "light": "/icons/tech/sublime.svg"
+    },
+    "sveltejs": {
+        "light": "/icons/tech/sveltejs.svg"
+    },
+    "swift": {
+        "light": "/icons/tech/swift.svg"
+    },
+    "tailwind": {
+        "light": "/icons/tech/tailwind.svg"
+    },
+    "typescript": {
+        "light": "/icons/tech/typescript.svg"
+    },
+    "ubuntu": {
+        "light": "/icons/tech/ubuntu.svg"
+    },
+    "vitejs": {
+        "light": "/icons/tech/vitejs.svg"
+    },
+    "vs": {
+        "light": "/icons/tech/vs.svg"
+    },
+    "vuejs-1": {
+        "light": "/icons/tech/vuejs-1.svg"
+    },
+    "vuejs": {
+        "light": "/icons/tech/vuejs.svg"
+    },
+    "webpack": {
+        "light": "/icons/tech/webpack.svg"
+    },
+    "wordpress": {
+        "light": "/icons/tech/wordpress.svg"
+    },
+    "xd": {
+        "light": "/icons/tech/xd.svg"
+    }
+}

@@ -1,0 +1,98 @@
+{
+  "apple": {
+    "light": "/icons/socials/light/Apple.svg",
+    "dark": "/icons/socials/dark/Apple.svg"
+  },
+  "clubhouse": {
+    "light": "/icons/socials/light/Clubhouse.svg",
+    "dark": "/icons/socials/dark/Clubhouse.svg"
+  },
+  "discord": {
+    "light": "/icons/socials/light/Discord.svg",
+    "dark": "/icons/socials/dark/Discord.svg"
+  },
+  "dribbble": {
+    "light": "/icons/socials/light/Dribbble.svg",
+    "dark": "/icons/socials/dark/Dribbble.svg"
+  },
+  "facebook": {
+    "light": "/icons/socials/light/Facebook.svg",
+    "dark": "/icons/socials/dark/Facebook.svg"
+  },
+  "figma": {
+    "light": "/icons/socials/light/Figma.svg",
+    "dark": "/icons/socials/dark/Figma.svg"
+  },
+  "github": {
+    "light": "/icons/socials/light/Github.svg",
+    "dark": "/icons/socials/dark/Github.svg"
+  },
+  "google": {
+    "light": "/icons/socials/light/Google.svg",
+    "dark": "/icons/socials/dark/Google.svg"
+  },
+  "instagram": {
+    "light": "/icons/socials/light/Instagram.svg",
+    "dark": "/icons/socials/dark/Instagram.svg"
+  },
+  "linkedin": {
+    "light": "/icons/socials/light/LinkedIn.svg",
+    "dark": "/icons/socials/dark/LinkedIn.svg"
+  },
+  "medium": {
+    "light": "/icons/socials/light/Medium.svg",
+    "dark": "/icons/socials/dark/Medium.svg"
+  },
+  "pinterest": {
+    "light": "/icons/socials/light/Pinterest.svg",
+    "dark": "/icons/socials/dark/Pinterest.svg"
+  },
+  "reddit": {
+    "light": "/icons/socials/light/Reddit.svg",
+    "dark": "/icons/socials/dark/Reddit.svg"
+  },
+  "signal": {
+    "light": "/icons/socials/light/Signal.svg",
+    "dark": "/icons/socials/dark/Signal.svg"
+  },
+  "skype": {
+    "light": "/icons/socials/light/Skype.svg",
+    "dark": "/icons/socials/dark/Skype.svg"
+  },
+  "snapchat": {
+    "light": "/icons/socials/light/Snapchat.svg",
+    "dark": "/icons/socials/dark/Snapchat.svg"
+  },
+  "spotify": {
+    "light": "/icons/socials/light/Spotify.svg",
+    "dark": "/icons/socials/dark/Spotify.svg"
+  },
+  "telegram": {
+    "light": "/icons/socials/light/Telegram.svg",
+    "dark": "/icons/socials/dark/Telegram.svg"
+  },
+  "tiktok": {
+    "light": "/icons/socials/light/TikTok.svg",
+    "dark": "/icons/socials/dark/TikTok.svg"
+  },
+  "tumblr": {
+    "light": "/icons/socials/light/Tumblr.svg",
+    "dark": "/icons/socials/dark/Tumblr.svg"
+  },
+  "twitch": {
+    "light": "/icons/socials/light/Twitch.svg",
+    "dark": "/icons/socials/dark/Twitch.svg"
+  },
+  "twitter": {
+    "light": "/icons/socials/light/Twitter.svg",
+    "dark": "/icons/socials/dark/Twitter.svg"
+  },
+  "vk": {
+    "light": "/icons/socials/light/VK.svg",
+    "dark": "/icons/socials/dark/VK.svg"
+  },
+  "youtube": {
+    "light": "/icons/socials/light/YouTube.svg",
+    "dark": "/icons/socials/dark/YouTube.svg"
+  }
+}

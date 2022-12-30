@@ -1,6 +1,6 @@
 import React from 'react';
 import { SocialLinks } from '../types/global';
-import { TechSkill } from '../types/global';
+import SkillIcon from './Icons/SkillIcon';
 import Image from 'next/image';
 import Page from './page';
 
@@ -13,7 +13,7 @@ type AboutProps = {
   currentCompany: string;
   searchingForJob?: boolean;
   socialLinks?: SocialLinks;
-  techSkills?: TechSkill[];
+  techSkills?: string[];
 };
 
 export default function About({
@@ -102,7 +102,13 @@ export default function About({
                 </h1>
                 <div className="mt-8 flex flex-row flex-wrap">
                   {techSkills.map((skill, idx) => (
-                    <Image src={skill.iconUrl} height="80" width="80" key={idx} alt={skill.name} />
+                    <SkillIcon
+                      name={skill}
+                      height={80}
+                      width={80}
+                      key={idx}
+                      className="transition-all duration-300 motion-safe:hover:-translate-y-2 dark:brightness-75"
+                    />
                   ))}
                 </div>
               </div>
@@ -124,10 +130,10 @@ function SocialLinkRenderer({ link, name }: SocialLinkRendererProp) {
     <div className="flex flex-row items-center justify-start ">
       <a href={link} className="group flex flex-row items-center space-x-4">
         <div className="my-4">&rarr;</div>
-        <p className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
+        <div className="relative overflow-hidden font-mono text-lg text-gray-500 dark:text-gray-300">
           <div className="absolute bottom-0 h-0.5 w-full -translate-x-24 transform bg-gray-400 transition duration-300 group-hover:translate-x-0"></div>
           {name}
-        </p>
+        </div>
       </a>
     </div>
   );

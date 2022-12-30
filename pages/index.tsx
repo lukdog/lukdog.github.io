@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import About from '../components/about';
 import Container from '../components/container';
 import HeroBanner, { ColoredTitle } from '../components/herobanner';
-import { SocialLinks, TechSkill } from '../types/global';
+import { SocialLinks } from '../types/global';
 
 const titles: ColoredTitle[] = [
   { title: 'Hello,', color: '#14B8A6' },
@@ -14,18 +14,19 @@ const socials: SocialLinks = {
   github: 'https://github.com/LukDog',
   instagram: 'https://instagram.com/lukdog8',
   linkedin: 'https://it.linkedin.com/in/lucadoglione',
+  medium: 'https://medium.com/@lukdog'
 };
 
-const techSkills: TechSkill[] = [
-  { name: 'JavaScript', iconUrl: '/tech-icons/js.svg' },
-  { name: 'Typescript', iconUrl: '/tech-icons/typescript.svg' },
-  { name: 'go', iconUrl: '/tech-icons/go.svg' },
-  { name: 'ReactJs', iconUrl: '/tech-icons/reactjs.svg' },
-  { name: 'NodeJs', iconUrl: '/tech-icons/nodejs.svg' },
-  { name: 'Auth0', iconUrl: '/tech-icons/auth0.svg' },
-  { name: 'AWS', iconUrl: '/tech-icons/aws.svg' },
-  { name: 'Tailwind', iconUrl: '/tech-icons/tailwind.svg' },
-  { name: 'NextJS', iconUrl: '/tech-icons/nextjs.svg' },
+const techSkills: string[] = [
+  'JavaScript',
+  'Typescript',
+  'go',
+  'ReactJs',
+  'NodeJs',
+  'Auth0',
+  'AWS',
+  'Tailwind',
+  'NextJS',
 ];
 
 const Home: NextPage = () => {

@@ -3,6 +3,7 @@ import { Experience } from '../types/global';
 import Page from './page';
 import Image from 'next/image';
 import Link from 'next/link';
+import SkillIcon from './Icons/SkillIcon';
 
 type ExperienceProps = {
   experiences: Experience[];
@@ -63,12 +64,11 @@ const ExperienceCard = ({ title, desc, year, company, companyLink, techSkills }:
       {techSkills && (
         <div className="mt-2 mb-2 flex flex-row flex-wrap">
           {techSkills.map((skill, idx) => (
-            <Image
-              src={skill.iconUrl}
-              height="50"
-              width="50"
+            <SkillIcon
+              name={skill}
+              height={50}
+              width={50}
               key={idx}
-              alt={skill.name}
               className="transition-all duration-300 motion-safe:hover:-translate-y-2 dark:brightness-75"
             />
           ))}

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { Experience } from '../types/global';
+import { Experience, SocialLinks } from '../types/global';
 
 import Container from '../components/container';
 import ExperienceComponent from '../components/experience';
@@ -12,16 +12,7 @@ const experiences: Experience[] = [
     year: '2022',
     company: 'Arduino',
     companyLink: 'https://arduino.cc/',
-    techSkills: [
-      { name: 'Go', iconUrl: '/tech-icons/go.svg' },
-      { name: 'Typescript', iconUrl: '/tech-icons/typescript.svg' },
-      { name: 'ReactJs', iconUrl: '/tech-icons/reactjs.svg' },
-      { name: 'Auth0', iconUrl: '/tech-icons/auth0.svg' },
-      { name: 'AWS', iconUrl: '/tech-icons/aws.svg' },
-      { name: 'postman', iconUrl: '/tech-icons/postman.svg' },
-      { name: 'Figma', iconUrl: '/tech-icons/figma.svg' },
-      { name: 'Jira', iconUrl: '/tech-icons/jira.svg' },
-    ],
+    techSkills: ['Go', 'Typescript', 'ReactJs', 'Auth0', 'AWS', 'postman', 'Figma', 'Jira'],
   },
   {
     title: 'Senior Software Engineer',
@@ -29,15 +20,7 @@ const experiences: Experience[] = [
     year: '2021',
     company: 'Arduino',
     companyLink: 'https://arduino.cc/',
-    techSkills: [
-      { name: 'Go', iconUrl: '/tech-icons/go.svg' },
-      { name: 'Typescript', iconUrl: '/tech-icons/typescript.svg' },
-      { name: 'ReactJs', iconUrl: '/tech-icons/reactjs.svg' },
-      { name: 'GraphQL', iconUrl: '/tech-icons/graphql.svg' },
-      { name: 'npm', iconUrl: '/tech-icons/npm.svg' },
-      { name: 'postman', iconUrl: '/tech-icons/postman.svg' },
-      { name: 'Figma', iconUrl: '/tech-icons/figma.svg' },
-    ],
+    techSkills: ['Go', 'Typescript', 'ReactJs', 'GraphQL', 'npm', 'postman', 'Figma'],
   },
   {
     title: 'HMI Technical Leader',
@@ -45,13 +28,7 @@ const experiences: Experience[] = [
     year: '2020',
     company: 'Marelli',
     companyLink: 'https://www.marelli.com/',
-    techSkills: [
-      { name: 'Android', iconUrl: '/tech-icons/android.svg' },
-      { name: 'Javascript', iconUrl: '/tech-icons/js.svg' },
-      { name: 'Linux', iconUrl: '/tech-icons/linux.svg' },
-      { name: 'NodeJs', iconUrl: '/tech-icons/nodejs.svg' },
-      { name: 'Jira', iconUrl: '/tech-icons/jira.svg' },
-    ],
+    techSkills: ['Android', 'Javascript', 'Linux', 'NodeJs', 'Jira'],
   },
   {
     title: 'HMI Software Engineer',
@@ -59,16 +36,7 @@ const experiences: Experience[] = [
     year: '2018',
     company: 'Marelli',
     companyLink: 'https://www.marelli.com/',
-    techSkills: [
-      { name: 'html5', iconUrl: '/tech-icons/html5.svg' },
-      { name: 'css3', iconUrl: '/tech-icons/css.svg' },
-      { name: 'sass', iconUrl: '/tech-icons/sass.svg' },
-      { name: 'Javascript', iconUrl: '/tech-icons/js.svg' },
-      { name: 'jQuery', iconUrl: '/tech-icons/jquery.svg' },
-      { name: 'Linux', iconUrl: '/tech-icons/linux.svg' },
-      { name: 'NodeJs', iconUrl: '/tech-icons/nodejs.svg' },
-      { name: 'Jira', iconUrl: '/tech-icons/jira.svg' },
-    ],
+    techSkills: ['html5', 'css3', 'sass', 'Javascript', 'jQuery', 'Linux', 'NodeJs', 'Jira'],
   },
   {
     title: 'Software Engineer Consultant',
@@ -76,13 +44,7 @@ const experiences: Experience[] = [
     year: '2016',
     company: 'Teoresi',
     companyLink: 'https://www.teoresigroup.com/',
-    techSkills: [
-      { name: 'html5', iconUrl: '/tech-icons/html5.svg' },
-      { name: 'css3', iconUrl: '/tech-icons/css.svg' },
-      { name: 'sass', iconUrl: '/tech-icons/sass.svg' },
-      { name: 'Javascript', iconUrl: '/tech-icons/js.svg' },
-      { name: 'jQuery', iconUrl: '/tech-icons/jquery.svg' },
-    ],
+    techSkills: ['html5', 'css3', 'sass', 'Javascript', 'jQuery'],
   },
   {
     title: "Master's degree in Computer Engineering",
@@ -100,9 +62,16 @@ const experiences: Experience[] = [
   },
 ];
 
+const socials: SocialLinks = {
+  github: 'https://github.com/LukDog',
+  instagram: 'https://instagram.com/lukdog8',
+  linkedin: 'https://it.linkedin.com/in/lucadoglione',
+  medium: 'https://medium.com/@lukdog',
+};
+
 const Experience: NextPage = function () {
   return (
-    <Container name="Luca Doglione">
+    <Container name="Luca Doglione" socials={socials}>
       <ExperienceComponent experiences={experiences} />
     </Container>
   );

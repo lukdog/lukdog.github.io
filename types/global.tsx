@@ -1,9 +1,28 @@
 export type SocialLinks = {
-  instagram?: string;
-  twitter?: string;
-  linkedin?: string;
-  github?: string;
+  apple?: string;
+  clubhouse?: string;
+  discord?: string;
+  dribbble?: string;
   facebook?: string;
+  figma?: string;
+  github?: string;
+  google?: string;
+  instagram?: string;
+  linkedin?: string;
+  medium?: string;
+  pinterest?: string;
+  reddit?: string;
+  signal?: string;
+  skype?: string;
+  snapchat?: string;
+  spotify?: string;
+  telegram?: string;
+  tiktok?: string;
+  tumblr?: string;
+  twitch?: string;
+  twitter?: string;
+  VK?: string;
+  youtube?: string;
 };
 
 export type Experience = {
@@ -12,7 +31,7 @@ export type Experience = {
   year: string;
   company: string;
   companyLink?: string;
-  techSkills?: TechSkill[];
+  techSkills?: string[];
 };
 
 export type NavigationElement = {
@@ -20,7 +39,8 @@ export type NavigationElement = {
   url: string;
 };
 
-export type TechSkill = {
+export type Icon = {
   name: string;
-  iconUrl: string;
+  lightUrl: string;
+  darkUrl?: string;
 };
