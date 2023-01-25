@@ -18,10 +18,12 @@ export default function Footer({ name, socialLinks }: FooterProps) {
           </div>
           <div>
             <div>
-              Thanks to
               <div className="inline-block transform transition duration-300 hover:-rotate-3 hover:scale-110">
-                <Link className="rounded-md px-2 py-1 hover:bg-red-500  hover:text-gray-50" href="https://manuarora.in">
-                  Manu Arora
+                <Link
+                  className="rounded-md px-2 py-1 hover:bg-red-500  hover:text-gray-50"
+                  href="https://github.com/lukdog/lukdog.github.io"
+                >
+                  Project & Credits
                 </Link>
               </div>
             </div>

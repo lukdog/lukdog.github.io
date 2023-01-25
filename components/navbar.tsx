@@ -56,32 +56,6 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
               )}
             </span>
           </Link>
-          <Link href="/projects">
-            <span
-              className={`text-base  ${
-                router.asPath === '/projects'
-                  ? 'font-bold text-gray-800 dark:text-gray-400'
-                  : 'font-normal text-gray-600 dark:text-gray-300 '
-              }`}
-            >
-              Projects
-              {router.asPath === '/projects' && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down inline-block h-3 w-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              )}
-            </span>
-          </Link>
           <Link href="/experience">
             <span
               className={`text-base  ${
@@ -108,32 +82,6 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
               )}
             </span>
           </Link>
-          <Link href="/contact">
-            <span
-              className={`text-base  ${
-                router.asPath === '/contact'
-                  ? 'font-bold text-gray-800 dark:text-gray-400'
-                  : 'font-normal text-gray-600 dark:text-gray-300 '
-              }`}
-            >
-              Contact
-              {router.asPath === '/contact' && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down inline-block h-3 w-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              )}
-            </span>
-          </Link>
         </div>
         {socialLinks && <SocialsWidget socials={socialLinks} height={20} width={20} className="space-x-4" />}
       </div>
@@ -141,14 +89,8 @@ export default function Navbar({ name, role, socialLinks, className }: NavbarPro
         <Link href="/about">
           <span className="text-base font-normal text-gray-600 dark:text-gray-300">About</span>
         </Link>
-        <Link href="/projects">
-          <span className="text-base font-normal text-gray-600 dark:text-gray-300">Projects</span>
-        </Link>
         <Link href="/experience">
           <span className="text-base font-normal text-gray-600 dark:text-gray-300">Experience</span>
-        </Link>
-        <Link href="/contact">
-          <span className="text-base font-normal text-gray-600 dark:text-gray-300">Contact</span>
         </Link>
       </div>
     </div>
