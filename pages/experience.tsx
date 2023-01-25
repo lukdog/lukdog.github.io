@@ -4,6 +4,7 @@ import { Experience, SocialLinks } from '../types/global';
 
 import Container from '../components/container';
 import ExperienceComponent from '../components/experience';
+import Head from 'next/head';
 
 const experiences: Experience[] = [
   {
@@ -71,9 +72,19 @@ const socials: SocialLinks = {
 
 const Experience: NextPage = function () {
   return (
-    <Container name="Luca Doglione" socials={socials}>
-      <ExperienceComponent experiences={experiences} />
-    </Container>
+    <>
+      <Head>
+        <title>Luca Doglione - Experiences</title>
+        <meta
+          name="description"
+          content="Luca Doglione - Software Engineer passionate about web and mobile development"
+          key="desc"
+        />
+      </Head>
+      <Container name="Luca Doglione" socials={socials}>
+        <ExperienceComponent experiences={experiences} />
+      </Container>
+    </>
   );
 };
 
