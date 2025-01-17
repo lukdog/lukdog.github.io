@@ -8,6 +8,14 @@ import Head from 'next/head';
 
 const experiences: Experience[] = [
   {
+    title: 'Associate Engineering Manager',
+    desc: 'Lead of Mobile and Web teams in Arduino Software and Cloud Area. Responsible for mobile applications, many Arduino Websites and Web applications and services related to Arduino Cloud.',
+    year: '2023',
+    company: 'Arduino',
+    companyLink: 'https://arduino.cc/',
+    techSkills: ['Go', 'Auth0', 'AWS', 'postman', 'Figma', 'Jira'],
+  },
+  {
     title: 'Senior Specialist Software Engineer',
     desc: "I'm currently responsible of web and mobile teams in Arduino software area. The first one is in charge of many microservices and react applications while the second is currently working on Iot Remote and Science Journal applications. I'm also involved in software architecture, development and review.",
     year: '2022',
