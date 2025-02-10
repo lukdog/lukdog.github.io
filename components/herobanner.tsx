@@ -30,7 +30,7 @@ export default function HeroBanner({ titles, profilePicUrl }: HeroBannerProps) {
 
       <div className="-mr-30 relative mt-20 hidden w-full md:w-1/2 lg:block">
         <div className="w-3/4 ">
-          <Image src={profilePicUrl} height="1333" width="1000" alt="avatar" className="rounded shadow" />
+          <Image src={profilePicUrl} height="600" width="600" alt="avatar" className="rounded shadow" />
           <div className="mt-4 flex flex-row justify-between">
             <div className="flex flex-row space-x-4">
               <svg
