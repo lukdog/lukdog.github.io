@@ -20,9 +20,9 @@ export default function HeroBanner({ titles, profilePicUrl }: HeroBannerProps) {
         <RoughNotationGroup show={true}>
           {titles.map((el, id) => {
             return (
-              <div style={{ width: 50*el.title.length }} key={id}>
+              <div className="mx-auto md:mx-0" style={{ width: "fit-content" }} key={id}>
               <Highlight key={id} color={el.color} duration={250}>
-                <h1 className="max-w-fit my-2 text-4xl font-bold text-gray-700 dark:text-gray-200 md:text-8xl">{el.title}</h1>
+                <h1 className="max-w-fit my-2 text-6xl font-bold text-gray-700 dark:text-gray-200 md:text-8xl">{el.title}</h1>
               </Highlight>
               </div>
             );
