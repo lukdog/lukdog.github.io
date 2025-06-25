@@ -12,7 +12,7 @@ export default function Highlight({ color, children, duration }: HighlightProps)
     <RoughNotation
       type="highlight"
       multiline={false}
-      padding={[0, 2]}
+      padding={[2, 2]}
       iterations={1}
       animationDuration={duration}
       color={color}
