@@ -1,12 +1,12 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { Experience, SocialLinks } from '../types/global';
+import { Experience as ExperienceType, SocialLinks } from '../types/global';
 
 import Container from '../components/container';
 import ExperienceComponent from '../components/experience';
 import Head from 'next/head';
 
-const experiences: Experience[] = [
+const experiences: ExperienceType[] = [
   {
     title: 'Associate Engineering Manager',
     desc: 'Lead of Mobile and Web teams in Arduino Software and Cloud Area. Responsible for mobile applications, many Arduino Websites and Web applications and services related to Arduino Cloud.',
