@@ -4,7 +4,7 @@ import { RoughNotation } from 'react-rough-notation';
 type HighlightProps = {
   color: string;
   duration: number;
-  children?: JSX.Element;
+  children?: React.JSX.Element;
   forceShow?: boolean;
 };
 

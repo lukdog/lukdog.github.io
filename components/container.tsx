@@ -6,7 +6,7 @@ import Navbar from './navbar';
 type ContainerProps = {
   socials?: SocialLinks;
   name: string;
-  children: JSX.Element[] | JSX.Element;
+  children: React.JSX.Element[] | React.JSX.Element;
 };
 
 export default function Container({ children, name, socials }: ContainerProps) {
