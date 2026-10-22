@@ -52,8 +52,8 @@ const Home: NextPage = () => {
             'I am also a highly collaborative team player, with strong communication skills and a dedication to delivering the best possible user experience. I am always happy to learn new technologies and approaches, and I believe that staying current and up-to-date is crucial for success in the rapidly-evolving field of software development.',
           ]}
           resumeUrl="https://luk.dog"
-          currentCompany="Arduino CC"
-          currentCompanyUrl="https://arduino.cc"
+          currentCompany="Qualcomm"
+          currentCompanyUrl="https://qualcomm.com"
           socialLinks={socials}
           techSkills={techSkills}
         />

@@ -8,6 +8,14 @@ import Head from 'next/head';
 
 const experiences: ExperienceType[] = [
   {
+    title: 'Senior Staff Manager',
+    desc: "Arduino has been acquired by Qualcomm. I manage teams developing frontend and mobile applications, maintaining Go microservices for Arduino Cloud, Arduino websites, and the Arduino learning platform, I'm also leading the software QA team.",
+    year: '2026',
+    company: 'Arduino (Qualcomm)',
+    companyLink: 'https://arduino.cc/',
+    techSkills: ['ReactJs', 'NextJs', 'Go', 'Auth0', 'AWS', 'postman', 'Figma', 'Jira'],
+  },
+  {
     title: 'Associate Engineering Manager',
     desc: 'Lead of Mobile and Web teams in Arduino Software and Cloud Area. Responsible for mobile applications, many Arduino Websites and Web applications and services related to Arduino Cloud.',
     year: '2023',

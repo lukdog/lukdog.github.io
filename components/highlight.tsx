@@ -5,9 +5,10 @@ type HighlightProps = {
   color: string;
   duration: number;
   children?: JSX.Element;
+  forceShow?: boolean;
 };
 
-export default function Highlight({ color, children, duration }: HighlightProps) {
+export default function Highlight({ color, children, duration, forceShow }: HighlightProps) {
   return (
     <RoughNotation
       type="highlight"
@@ -16,6 +17,7 @@ export default function Highlight({ color, children, duration }: HighlightProps)
       iterations={1}
       animationDuration={duration}
       color={color}
+      show={forceShow || false}
     >
       {children}
     </RoughNotation>

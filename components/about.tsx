@@ -3,6 +3,7 @@ import { SocialLinks } from '../types/global';
 import SkillIcon from './Icons/SkillIcon';
 import Image from 'next/image';
 import Page from './page';
+import Highlight from './highlight';
 
 type AboutProps = {
   intro: string;
@@ -33,9 +34,15 @@ export default function About({
         <div className="text-container mx-auto max-w-6xl pt-20 dark:text-gray-300">
           <p className="mx-4 text-2xl font-semibold leading-loose  md:text-4xl" style={{ lineHeight: '3rem' }}>
             {intro}. <br /> Currently employed in{' '}
-            <a className="rounded-md bg-teal-500 px-2 py-1 text-white" href={currentCompanyUrl}>
-              {currentCompany}
-            </a>
+            <Highlight color="#373d61" duration={250} forceShow={true}>
+              <a className=" px-2 py-3 text-white" href={currentCompanyUrl}>
+                {currentCompany}
+              </a>
+            </Highlight>{' '}
+            working as Senior Manager at{' '}
+            <Highlight color="#14B8A6" duration={250} forceShow={true}>
+              <a className="px-2 py-3 text-white">Arduino.</a>
+            </Highlight>
           </p>
         </div>
       </div>
