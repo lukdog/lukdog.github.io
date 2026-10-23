@@ -81,3 +81,23 @@
     text-wrap: balance;
   }
 }
+
+/* Pen strokes for the drawings. In the components layer so Tailwind's stroke-* utilities can recolour them. */
+@layer components {
+  .stroke-sketch {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Resting poses for the parts that move on scroll; without scroll-driven animation they stay here. */
+  .spin-on-scroll {
+    transform-box: view-box;
+  }
+
+  .ride-on-scroll {
+    transform: translate(80px, 61px) rotate(25deg);
+  }
+}

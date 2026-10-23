@@ -1,6 +1,7 @@
 // Root layout: fonts, metadata and the theme script that runs before the first paint.
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Caveat, JetBrains_Mono } from 'next/font/google';
+import { site } from '@/content/site';
 import './globals.css';
 
 const display = Bricolage_Grotesque({ subsets: ['latin'], axes: ['opsz'], variable: '--font-bricolage' });
@@ -8,8 +9,16 @@ const hand = Caveat({ subsets: ['latin'], weight: ['500', '700'], variable: '--f
 const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '600'], variable: '--font-jetbrains' });
 
 export const metadata: Metadata = {
-  title: 'Luca Doglione',
-  description: 'Luca Doglione builds software, products and the architecture that keeps them together.',
+  metadataBase: new URL(site.url),
+  title: site.name,
+  description: site.description,
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    url: site.url,
+    type: 'profile',
+    images: [{ url: site.hero.photo.src, width: site.hero.photo.width, height: site.hero.photo.height }],
+  },
 };
 
 // A saved choice wins, otherwise the system setting; set before paint so dark never flashes light.
