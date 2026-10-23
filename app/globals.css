@@ -154,4 +154,287 @@
   .ride-on-scroll {
     transform: translate(80px, 61px) rotate(25deg);
   }
+
+  .timeline {
+    view-timeline-name: --timeline;
+  }
+
+  /* Objects you can touch lift a little under a mouse, so they invite a tap without saying so. */
+  .touchable {
+    transition: translate 150ms var(--ease-out);
+  }
+
+  .touchable-press {
+    transition: scale 120ms var(--ease-out);
+  }
+
+  .touchable-press:active {
+    scale: 0.98;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .touchable:hover {
+      translate: 0 -2px;
+    }
+
+    .polaroid:hover {
+      rotate: 0deg;
+      scale: 1.02;
+    }
+  }
+
+  .polaroid {
+    transition:
+      rotate 350ms var(--ease-spring),
+      scale 350ms var(--ease-spring);
+  }
+}
+
+/*
+ * Motion. On load: the hello is highlighted word by word (HeroTitle), then the photo lands, then the squiggle
+ * and the arrow are drawn. On scroll: titles slide in, items rise, drawings draw, the timeline fills.
+ * Only transforms and strokes move: text is never hidden, and nothing here runs with reduced motion.
+ */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(-18px) rotate(-6deg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-32px);
+  }
+}
+
+@keyframes rise-left {
+  from {
+    transform: translateY(56px) rotate(-1.5deg);
+  }
+}
+
+@keyframes rise-right {
+  from {
+    transform: translateY(72px) rotate(1.5deg);
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.6);
+  }
+}
+
+@keyframes nudge {
+  from {
+    transform: translateX(18px);
+  }
+}
+
+@keyframes slap {
+  0% {
+    transform: rotate(-13deg) scale(1.6);
+  }
+  70% {
+    transform: rotate(3deg) scale(0.9);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes tilt {
+  to {
+    transform: translateY(-36px) rotate(-5deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+@keyframes ride {
+  0% {
+    transform: translate(34px, 40px) rotate(23deg);
+  }
+  50% {
+    transform: translate(80px, 61px) rotate(25deg);
+  }
+  100% {
+    transform: translate(126px, 83px) rotate(26deg);
+  }
+}
+
+@keyframes waves {
+  to {
+    transform: translateX(120px);
+  }
+}
+
+@keyframes bob {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* The hero waits for the highlighted hello (data-ready); the theme script's data-theme means JS is running. */
+  :root[data-theme] #hero:not(:has(#hello[data-ready])) .polaroid {
+    transform: translateY(-18px) rotate(-6deg);
+  }
+
+  :root[data-theme] #hero:not(:has(#hello[data-ready])) :is(.hero-squiggle, .hero-arrow) {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  #hero:has(#hello[data-ready]) .polaroid {
+    animation: drop 600ms var(--ease-spring) 500ms backwards;
+  }
+
+  #hero:has(#hello[data-ready]) :is(.hero-squiggle, .hero-arrow) {
+    stroke-dasharray: 1;
+    animation: draw 650ms var(--ease-in-out) 750ms backwards;
+  }
+
+  #hero:has(#hello[data-ready]) .hero-arrow {
+    animation-duration: 500ms;
+    animation-delay: 1250ms;
+  }
+
+  .doodle-cursor {
+    animation: blink 1.1s step-end infinite;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .polaroid-tilt {
+      animation: tilt linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 70vh;
+    }
+
+    .slide-on-enter {
+      animation: slide-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+
+    .rise-on-enter {
+      animation: rise-left linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+
+    .rise-on-enter:nth-child(even) {
+      animation-name: rise-right;
+    }
+
+    :is(.draw-step-1, .draw-step-2, .draw-step-3, .draw-on-enter, .timeline-line, .trail-reveal) {
+      stroke-dasharray: 1;
+      animation: draw linear both;
+    }
+
+    .draw-step-1,
+    .draw-step-2,
+    .draw-step-3,
+    .trail-reveal {
+      animation-timeline: --item;
+    }
+
+    .draw-step-1 {
+      animation-range: entry 20% cover 35%;
+    }
+
+    .draw-step-2 {
+      animation-range: entry 50% cover 40%;
+    }
+
+    .draw-step-3,
+    .trail-reveal {
+      animation-range: entry 80% cover 45%;
+    }
+
+    .draw-on-enter {
+      animation-timeline: view();
+      animation-range: entry 40% cover 40%;
+    }
+
+    .timeline-line {
+      animation-timeline: --timeline;
+      animation-range: entry 15% cover 70%;
+    }
+
+    .pop-on-enter {
+      animation: pop linear both;
+      animation-timeline: view();
+      animation-range: entry 30% entry 90%;
+    }
+
+    .nudge-on-enter {
+      animation: nudge linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+
+    .slap-on-enter {
+      animation: slap linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 90%;
+    }
+
+    .spin-on-scroll,
+    .waves-on-scroll,
+    .bob-on-scroll {
+      animation: spin linear both;
+      animation-timeline: --item;
+      animation-range: cover 0% cover 100%;
+    }
+
+    .waves-on-scroll {
+      animation-name: waves;
+    }
+
+    .bob-on-scroll {
+      animation-name: bob;
+    }
+
+    .ride-on-scroll {
+      animation: ride linear both;
+      animation-timeline: --item;
+      animation-range: entry 30% cover 85%;
+    }
+  }
+}
+
+/* The theme change is a single circle growing from the switch, not a cross-fade. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
