@@ -15,7 +15,29 @@
   --orange: #ed8936;
   --on-marker: #15181d;
   --shadow: rgb(28 34 48 / 0.12);
+  --led: #ef4444;
+  --led-glow: rgb(239 68 68 / 0.45);
+  --led-dim: #f2a3a3;
+  --led-off: #e2e5dc;
+  --glow-alpha: 0.55;
   color-scheme: light;
+
+  /* Colours of real lights and screens: the same in both themes. */
+  --dawn: #ff8466;
+  --morning: #ffc46b;
+  --noon: #ffe39a;
+  --dusk: #ff6f5e;
+  --night: #7d86ff;
+  --scene-work: #bfd8ff;
+  --scene-relax: #ffb25e;
+  --scene-movie: #6f7dff;
+  --nesso: #2a2e35;
+  --key1: #b9d53a;
+  --lcd: #111317;
+  --lcd-card: #2b2f36;
+  --lcd-ink: #ededea;
+  --lcd-faint: #a3a8b0;
+  --lcd-orange: #f28a3a;
 }
 
 :root[data-theme='dark'] {
@@ -31,7 +53,31 @@
   --orange: #f39a56;
   --on-marker: #14171c;
   --shadow: rgb(0 0 0 / 0.45);
+  --led: #ff5a52;
+  --led-glow: rgb(255 90 82 / 0.55);
+  --led-dim: #7c3532;
+  --led-off: #262b33;
+  --glow-alpha: 0.85;
   color-scheme: dark;
+}
+
+/* Registered so lights can fade between colours. */
+@property --lamp {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffc46b;
+}
+
+@property --tv-a {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ff8a5b;
+}
+
+@property --tv-b {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #7a3e9d;
 }
 
 @theme inline {
@@ -45,7 +91,10 @@
   --color-coral: var(--coral);
   --color-orange: var(--orange);
   --color-on-marker: var(--on-marker);
+}
 
+/* Not inline: CSS modules read these at runtime too. */
+@theme {
   --font-display: var(--font-bricolage), 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
   --font-hand: var(--font-caveat), 'Bradley Hand', 'Segoe Print', cursive;
   --font-mono: var(--font-jetbrains), ui-monospace, 'SF Mono', Menlo, monospace;
@@ -90,6 +139,11 @@
     stroke-width: 2.4;
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+
+  /* Every item is a scroll timeline its drawings and objects can follow. */
+  .item {
+    view-timeline-name: --item;
   }
 
   /* Resting poses for the parts that move on scroll; without scroll-driven animation they stay here. */

@@ -1,0 +1,88 @@
+/* A landscape Nesso N1 sitting on the monitor, with KEY1 on its side; colours are written by the drawing loop. */
+.hippo {
+  display: grid;
+  justify-items: center;
+}
+
+.device {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  box-sizing: border-box;
+  padding: 7px 4px 7px 7px;
+  background: var(--nesso);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px 14px 11px 15px / 14px 11px 15px 12px;
+}
+
+.screenButton {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.screen {
+  display: block;
+  width: 156px;
+  height: auto;
+  border-radius: 3px;
+}
+
+.white {
+  fill: #f7f7f2;
+}
+
+.key {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key span {
+  width: 11px;
+  height: 44px;
+  border-radius: 6px;
+  background: var(--key1);
+  transition:
+    transform 120ms var(--ease-out),
+    box-shadow 300ms ease;
+}
+
+.key:active span {
+  transform: scale(0.92);
+}
+
+/* When an agent needs input, KEY1 lights up. */
+.hippo[data-mood='curious'] .key span {
+  box-shadow: 0 0 12px 3px var(--key1);
+}
+
+.monitor {
+  display: block;
+  width: 228px;
+  height: 18px;
+  margin-top: -4px;
+  box-sizing: border-box;
+  background: var(--paper-raised);
+  border: 2.5px solid var(--ink);
+  border-bottom: 0;
+  border-radius: 9px 10px 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key span {
+    transition: none;
+  }
+}

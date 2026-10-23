@@ -3,25 +3,32 @@ import type { ComponentType } from 'react';
 import type { VisualKey } from '@/content/types';
 import { BikeDoodle, SnowboardDoodle, SwimmingDoodle, TrekkingDoodle } from './doodles/outside';
 import { ArchitectureDoodle, CodeDoodle, IntegrationsDoodle, MobileDoodle, WebDoodle, WhyDoodle } from './doodles/work';
-import { Stage } from './Stage';
+import { LedGames } from './objects/LedGames';
+import { Macropad } from './objects/Macropad';
+import { MoodCube } from './objects/MoodCube';
+import { NessoHippo } from './objects/NessoHippo';
+import { PressMe } from './objects/PressMe';
+import { ScheduleScreen } from './objects/ScheduleScreen';
+import { SunLamp } from './objects/SunLamp';
+import { TvLight } from './objects/TvLight';
 
 export const visuals = {
   code: CodeDoodle,
   why: WhyDoodle,
   architecture: ArchitectureDoodle,
   integrations: IntegrationsDoodle,
-  pressMe: Stage,
+  pressMe: PressMe,
   web: WebDoodle,
   mobile: MobileDoodle,
   bike: BikeDoodle,
   snowboard: SnowboardDoodle,
   trekking: TrekkingDoodle,
   swimming: SwimmingDoodle,
-  sunLamp: Stage,
-  moodCube: Stage,
-  tvLight: Stage,
-  ledGames: Stage,
-  schedule: Stage,
-  nessoHippo: Stage,
-  macropad: Stage,
+  sunLamp: SunLamp,
+  moodCube: MoodCube,
+  tvLight: TvLight,
+  ledGames: LedGames,
+  schedule: ScheduleScreen,
+  nessoHippo: NessoHippo,
+  macropad: Macropad,
 } satisfies Record<VisualKey, ComponentType>;

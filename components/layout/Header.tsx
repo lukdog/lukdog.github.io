@@ -1,6 +1,7 @@
 // Name, the four sections and the theme switch.
 import type { Link } from '@/content/types';
 import { InkLink } from '@/components/ui/InkLink';
+import { ThemeToggle } from './ThemeToggle';
 
 export function Header({ name, nav }: { name: string; nav: Link[] }) {
   return (
@@ -18,6 +19,7 @@ export function Header({ name, nav }: { name: string; nav: Link[] }) {
           </InkLink>
         ))}
       </nav>
+      <ThemeToggle className="col-start-2 row-start-1 min-[860px]:col-start-3" />
     </header>
   );
 }

@@ -1,0 +1,125 @@
+/* A real 3D cube: four labelled sides around the Y axis, turned a quarter at a time by --turn. */
+.cube {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 12px;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scene {
+  display: block;
+  width: 84px;
+  height: 84px;
+  perspective: 700px;
+}
+
+.body {
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 84px;
+  transform-style: preserve-3d;
+  transform: rotateX(-24deg) rotateY(calc(var(--turn, 0) * -90deg - 32deg));
+  transition: transform 550ms var(--ease-spring);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  background: var(--paper-raised);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px 14px 11px 15px;
+  font: 700 1.35rem/1 var(--font-hand);
+  color: var(--ink);
+}
+
+.face[data-side='0'] {
+  transform: translateZ(42px);
+}
+.face[data-side='1'] {
+  transform: rotateY(90deg) translateZ(42px);
+}
+.face[data-side='2'] {
+  transform: rotateY(180deg) translateZ(42px);
+}
+.face[data-side='3'] {
+  transform: rotateY(-90deg) translateZ(42px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(42px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(42px);
+}
+
+/* The little LED on top shows the scene too. */
+.top::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--scene, var(--led-off));
+  box-shadow: 0 0 10px var(--scene, transparent);
+  transition:
+    background-color 400ms ease,
+    box-shadow 400ms ease;
+}
+
+.bulb {
+  width: 60px;
+  height: 90px;
+  overflow: visible;
+}
+
+.glow {
+  fill: var(--scene, transparent);
+  opacity: var(--glow-alpha);
+  transition: fill 450ms ease;
+}
+
+.glass {
+  fill: var(--scene, var(--paper-raised));
+  stroke: var(--ink);
+  stroke-width: 2.4;
+  transition: fill 450ms ease;
+}
+
+.ink {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-9deg) translateY(10px);
+  }
+  to {
+    transform: rotate(7deg) translateY(-8px);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scene {
+      animation: sway linear both;
+      animation-timeline: --item;
+      animation-range: cover 0% cover 100%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .body {
+    transition: none;
+  }
+}

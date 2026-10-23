@@ -1,6 +1,7 @@
 // A group of items under a highlighted title, laid out in as many columns as it has items.
 import classNames from 'classnames';
 import type { Group as GroupContent } from '@/content/types';
+import { LightSwitch } from '@/components/ui/LightSwitch';
 import { MarkerOnView } from '@/components/ui/Marker';
 import { Note } from '@/components/ui/Note';
 import { Item } from './Item';
@@ -19,6 +20,7 @@ export function Group({ group }: { group: GroupContent }) {
           <MarkerOnView color={group.marker}>{group.title}</MarkerOnView>
         </h3>
         <Note>{group.note}</Note>
+        {group.lightSwitch && <LightSwitch className="ml-auto" />}
       </div>
       <div className={classNames('grid gap-x-10 gap-y-11', columns[group.items.length])}>
         {group.items.map((item) => (
