@@ -46,3 +46,7 @@ out
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local design mockups and editor tooling
+/mockups
+/.claude/launch.json

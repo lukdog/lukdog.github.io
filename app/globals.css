@@ -1,0 +1,83 @@
+/* Design tokens, base styles and the few utilities Tailwind does not cover (sketch strokes, motion). */
+@import 'tailwindcss';
+
+/* One palette per theme; components only ever use these tokens. */
+:root {
+  --paper: #f4f5f0;
+  --paper-raised: #ffffff;
+  --ink: #1c2230;
+  --ink-soft: #4a5262;
+  --ink-faint: #646b7a;
+  --dot: #d6dad0;
+  --rule: #b9bfb4;
+  --teal: #14b8a6;
+  --coral: #f56565;
+  --orange: #ed8936;
+  --on-marker: #15181d;
+  --shadow: rgb(28 34 48 / 0.12);
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #13161b;
+  --paper-raised: #1c2027;
+  --ink: #e7e9e4;
+  --ink-soft: #b6bbc4;
+  --ink-faint: #959ba6;
+  --dot: #262b33;
+  --rule: #474e59;
+  --teal: #3ccfbe;
+  --coral: #f47c7c;
+  --orange: #f39a56;
+  --on-marker: #14171c;
+  --shadow: rgb(0 0 0 / 0.45);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-rule: var(--rule);
+  --color-teal: var(--teal);
+  --color-coral: var(--coral);
+  --color-orange: var(--orange);
+  --color-on-marker: var(--on-marker);
+
+  --font-display: var(--font-bricolage), 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+  --font-hand: var(--font-caveat), 'Bradley Hand', 'Segoe Print', cursive;
+  --font-mono: var(--font-jetbrains), ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  body {
+    background-color: var(--paper);
+    background-image: radial-gradient(circle at 1px 1px, var(--dot) 1.1px, transparent 1.6px);
+    background-size: 22px 22px;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+    overflow-x: clip;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+}
