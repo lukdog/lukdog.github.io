@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
 };
 
-// A saved choice wins, otherwise the system setting; set before paint so dark never flashes light.
-const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t==='dark'||t==='light'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){}`;
+// A choice made in this tab wins, otherwise the system setting; set before paint so dark never flashes light.
+const themeScript = `try{var t=sessionStorage.getItem('theme');document.documentElement.dataset.theme=t==='dark'||t==='light'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

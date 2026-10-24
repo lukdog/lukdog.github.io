@@ -1,4 +1,4 @@
-// Light or dark: a saved choice wins, otherwise the system. app/layout.tsx applies it before the first paint.
+// Light or dark: a choice made in this tab wins, otherwise the system. app/layout.tsx applies it before the first paint.
 'use client';
 
 import { useSyncExternalStore } from 'react';
@@ -12,7 +12,7 @@ const current = (): Theme => (document.documentElement.dataset.theme === 'dark' 
 
 function saved(): Theme | null {
   try {
-    const value = localStorage.getItem(STORAGE_KEY);
+    const value = sessionStorage.getItem(STORAGE_KEY);
     return value === 'dark' || value === 'light' ? value : null;
   } catch {
     return null;
@@ -41,13 +41,13 @@ export function useTheme(): Theme {
   return useSyncExternalStore(subscribe, current, () => 'light');
 }
 
-/** Switches theme and remembers it; where View Transitions exist the new theme grows as a circle from `origin`. */
+/** Switches theme for this tab only, so a new visit starts from the system again; where View Transitions exist the new theme grows as a circle from `origin`. */
 export function toggleTheme(origin: Element) {
   const next: Theme = current() === 'dark' ? 'light' : 'dark';
   const commit = () => {
     apply(next);
     try {
-      localStorage.setItem(STORAGE_KEY, next);
+      sessionStorage.setItem(STORAGE_KEY, next);
     } catch {}
   };
 
