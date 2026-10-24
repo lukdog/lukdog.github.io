@@ -99,25 +99,6 @@
   stroke-linecap: round;
 }
 
-@keyframes sway {
-  from {
-    transform: rotate(-9deg) translateY(10px);
-  }
-  to {
-    transform: rotate(7deg) translateY(-8px);
-  }
-}
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .scene {
-      animation: sway linear both;
-      animation-timeline: --item;
-      animation-range: cover 0% cover 100%;
-    }
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .body {
     transition: none;

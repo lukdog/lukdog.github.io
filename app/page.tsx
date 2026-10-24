@@ -6,6 +6,7 @@ import { Contact } from '@/components/sections/Contact';
 import { Hero } from '@/components/sections/Hero';
 import { Section } from '@/components/sections/Section';
 import { Timeline } from '@/components/sections/Timeline';
+import { RevealObserver } from '@/components/ui/RevealObserver';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Contact contact={site.contact} />
       </main>
       <Footer name={site.name} note={site.footer.note} repo={site.repo} />
+      <RevealObserver />
     </div>
   );
 }

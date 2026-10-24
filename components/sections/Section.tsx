@@ -14,7 +14,8 @@ export function SectionHead({
     <div className="mb-5 flex flex-wrap items-baseline gap-x-[18px] gap-y-0.5">
       <h2
         id={`${id}-title`}
-        className="slide-on-enter text-[clamp(2.2rem,5.5vw,3.6rem)] leading-[1.05] font-extrabold tracking-[-0.03em]"
+        data-reveal
+        className="text-[clamp(2.2rem,5.5vw,3.6rem)] leading-[1.05] font-extrabold tracking-[-0.03em]"
       >
         <Underlined color={underline}>{title}</Underlined>
       </h2>

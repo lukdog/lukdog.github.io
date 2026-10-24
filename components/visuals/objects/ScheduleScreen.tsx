@@ -3,8 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { useClock } from '@/lib/use-clock';
-import { useInView } from '@/lib/use-in-view';
-import { useReducedMotion } from '@/lib/use-reduced-motion';
+import { useAlive } from '@/lib/use-alive';
 import { Stage } from '../Stage';
 import styles from './ScheduleScreen.module.css';
 
@@ -52,8 +51,7 @@ function Cloud() {
 }
 
 export function ScheduleScreen() {
-  const [ref, inView] = useInView<HTMLDivElement>();
-  const reduceMotion = useReducedMotion();
+  const [ref, alive] = useAlive<HTMLDivElement>();
   const [inMeeting, setInMeeting] = useState(false);
   const [flips, setFlips] = useState(0);
   const now = useClock();
@@ -61,10 +59,10 @@ export function ScheduleScreen() {
 
   // While on screen it alternates between the two views; a tap flips it and restarts the timer.
   useEffect(() => {
-    if (!inView || reduceMotion) return;
+    if (!alive) return;
     const timer = setInterval(() => setInMeeting((value) => !value), FLIP_MS);
     return () => clearInterval(timer);
-  }, [inView, reduceMotion, flips]);
+  }, [alive, flips]);
 
   return (
     <Stage>

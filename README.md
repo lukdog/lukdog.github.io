@@ -43,9 +43,15 @@ only while they are on screen.
 
 ## Motion
 
-Scroll animations use CSS scroll-driven animations (`animation-timeline: view()`), so they run off the main thread.
-Only transforms and strokes move: text is never hidden. With `prefers-reduced-motion` the page stays still, and browsers
-without scroll timelines get the resting version (the lamp then shows the visitor's local time).
+The page moves one to one with the scroll. Items, titles and companies arrive once, the first time they come into
+view (`components/ui/RevealObserver.tsx` marks them, `app/globals.css` plays the entrance), and then stay still.
+Only two things follow the scroll itself, because there the scroll is the point: the sun lamp (scrolling is the day
+passing) and the timeline line, both as CSS scroll-driven animations.
+
+Living objects (the LED game, the hippo, the schedule screen) move only while at least half of them is on screen, and
+pause while the page is scrolling (`lib/use-alive.ts`). Only transforms and strokes animate: text is never hidden. With
+`prefers-reduced-motion` the page stays still, and browsers without scroll timelines show the lamp at the visitor's
+local time.
 
 ## Development
 

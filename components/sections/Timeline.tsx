@@ -7,9 +7,10 @@ import { SectionHead } from './Section';
 
 const row = 'grid grid-cols-[var(--yc)_var(--lc)_minmax(0,1fr)]';
 
-function RoleRow({ role }: { role: Role }) {
+/** `order` staggers the roles of a company as it arrives. */
+function RoleRow({ role, order }: { role: Role; order: number }) {
   return (
-    <li className={classNames(row, 'items-start')}>
+    <li className={classNames(row, 'items-start')} style={{ '--i': order + 1 } as React.CSSProperties}>
       <span
         className={classNames(
           'font-hand relative col-start-1 justify-self-start text-[1.6rem] leading-none font-bold tabular-nums',
@@ -36,7 +37,7 @@ function RoleRow({ role }: { role: Role }) {
 
 function CompanyBlock({ company }: { company: Company }) {
   return (
-    <li>
+    <li data-reveal>
       <div className={classNames(row, 'items-center')}>
         <span
           aria-hidden
@@ -53,8 +54,8 @@ function CompanyBlock({ company }: { company: Company }) {
         </div>
       </div>
       <ol className="mt-[22px] grid gap-[22px]">
-        {company.roles.map((role) => (
-          <RoleRow key={`${role.year}-${role.title}`} role={role} />
+        {company.roles.map((role, i) => (
+          <RoleRow key={`${role.year}-${role.title}`} role={role} order={i} />
         ))}
       </ol>
     </li>

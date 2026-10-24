@@ -3,8 +3,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { colours, faceFor, towardsHue, type Face, type Mood } from '@/lib/nesso-face';
-import { useInView } from '@/lib/use-in-view';
-import { useReducedMotion } from '@/lib/use-reduced-motion';
+import { useAlive } from '@/lib/use-alive';
 import { Stage } from '../Stage';
 import styles from './NessoHippo.module.css';
 
@@ -66,8 +65,7 @@ function Eye({ x }: { x: number }) {
 }
 
 export function NessoHippo() {
-  const [ref, inView] = useInView<HTMLDivElement>();
-  const reduceMotion = useReducedMotion();
+  const [ref, alive, reduceMotion] = useAlive<HTMLDivElement>();
   const [mood, setMood] = useState<Mood>('resting');
   const [level, setLevel] = useState(0.3);
   const screen = useRef<SVGSVGElement>(null);
@@ -90,21 +88,21 @@ export function NessoHippo() {
     }
   }, [mood, level, reduceMotion]);
 
-  // The mood moves on by itself while the hippo is on screen.
+  // The mood moves on by itself while someone is watching.
   useEffect(() => {
-    if (!inView) return;
+    if (!alive) return;
     const { after, mood: next } = NEXT_MOOD[mood];
     const timer = setTimeout(() => {
       if (mood === 'heart') setLevel((today) => Math.min(1, (today + 0.35) % 1.2));
       setMood(next);
     }, after);
     return () => clearTimeout(timer);
-  }, [mood, inView]);
+  }, [mood, alive]);
 
-  // One requestAnimationFrame loop while visible, writing to the SVG and never through React.
+  // One requestAnimationFrame loop while someone is watching, writing to the SVG and never through React.
   useEffect(() => {
     const svg = screen.current;
-    if (!svg || !inView || reduceMotion) return;
+    if (!svg || !alive) return;
 
     let gaze = { x: 0, y: 0 };
     let pointer: { x: number; y: number } | null = null;
@@ -168,7 +166,7 @@ export function NessoHippo() {
       cancelAnimationFrame(frame);
       removeEventListener('pointermove', onPointer);
     };
-  }, [inView, reduceMotion]);
+  }, [alive]);
 
   const love = () => setMood('heart');
 

@@ -12,7 +12,7 @@ export function BikeDoodle() {
       {[40, 120].map((cx) => (
         <g key={cx}>
           <circle className="stroke-sketch draw-step-1" pathLength={1} cx={cx} cy={76} r={20} />
-          <g className="spin-on-scroll" style={{ transformOrigin: `${cx}px 76px` }}>
+          <g className="wheel" style={{ transformOrigin: `${cx}px 76px` }}>
             <Line className="stroke-[1.6]" d={spokes(cx, 76)} />
           </g>
         </g>
@@ -34,7 +34,7 @@ export function SnowboardDoodle() {
         d="M128 6 L118 28 L138 28 Z M128 28 L128 35 M148 22 L141 38 L155 38 Z M148 38 L148 43"
       />
       <Dots d="M20 52 L60 70 M90 82 L130 96" />
-      <g className="ride-on-scroll">
+      <g className="rider">
         <Line tone="teal" className="stroke-4" d="M-17 3 L17 -1" />
         <Line d="M-6 1 L-2 -9 L4 0 M-2 -9 L0 -20 M-11 -17 L0 -16 L10 -21" />
         <circle className="stroke-sketch" cx={1} cy={-25} r={4.5} />
@@ -77,11 +77,11 @@ export function SwimmingDoodle() {
   return (
     <Doodle clip>
       <Line tone="faint" dash="3 6" d="M0 22 L160 22 M0 100 L160 100" />
-      <g className="waves-on-scroll">
+      <g className="waves">
         <Line tone="teal" d={wave(-160, 66, 7)} />
         <Line tone="faint" d={wave(-150, 82, 6)} />
       </g>
-      <g className="bob-on-scroll">
+      <g className="swimmer">
         <circle className="stroke-sketch" cx={80} cy={56} r={7} />
         <Line className="stroke-[1.6]" d="M74 55 L86 55" />
         <Line tone="coral" d="M62 62 Q70 34 96 48" />

@@ -10,7 +10,8 @@ export function Contact({ contact }: { contact: Site['contact'] }) {
     <section id={contact.id} aria-labelledby={`${contact.id}-title`} className="pt-16 pb-[72px]">
       <h2
         id={`${contact.id}-title`}
-        className="contact-title mb-5 text-[clamp(2.6rem,7vw,4.5rem)] leading-none font-extrabold tracking-[-0.035em]"
+        data-reveal
+        className="mb-5 text-[clamp(2.6rem,7vw,4.5rem)] leading-none font-extrabold tracking-[-0.035em]"
       >
         {before}
         <Circled>{contact.circled}</Circled>

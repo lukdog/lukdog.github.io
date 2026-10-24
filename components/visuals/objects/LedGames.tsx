@@ -3,9 +3,8 @@
 
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { frame, newGame, step, stillGame, type Game } from '@/lib/flappy';
-import { useInView } from '@/lib/use-in-view';
-import { useReducedMotion } from '@/lib/use-reduced-motion';
+import { frame, step, stillGame, type Game } from '@/lib/flappy';
+import { useAlive } from '@/lib/use-alive';
 import { Stage } from '../Stage';
 import styles from './LedGames.module.css';
 
@@ -46,21 +45,15 @@ function Board() {
 }
 
 export function LedGames() {
-  const [ref, inView] = useInView<HTMLDivElement>();
-  const reduceMotion = useReducedMotion();
+  const [ref, alive, reduceMotion] = useAlive<HTMLDivElement>();
   const [game, setGame] = useState<Game>(stillGame);
-  const playing = inView && !reduceMotion;
 
-  // A fresh game every time the board comes back on screen; it pauses while nobody can see it.
+  // The game goes on while someone is watching and waits, mid-flight, while the page scrolls.
   useEffect(() => {
-    if (!playing) return;
-    let current = newGame();
-    const timer = setInterval(() => {
-      current = step(current);
-      setGame(current);
-    }, TICK_MS);
+    if (!alive) return;
+    const timer = setInterval(() => setGame((current) => step(current)), TICK_MS);
     return () => clearInterval(timer);
-  }, [playing]);
+  }, [alive]);
 
   const leds = frame(reduceMotion ? stillGame : game);
 

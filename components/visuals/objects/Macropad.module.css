@@ -1,4 +1,4 @@
-/* Keycaps sink into their pencil shadow when pressed; the two knobs turn as the page scrolls. */
+/* Keycaps sink into their pencil shadow when pressed. */
 .pad {
   display: grid;
   gap: 6px;
@@ -91,36 +91,4 @@
 
 .wide {
   grid-column: span 2;
-}
-
-@keyframes turn-left {
-  from {
-    transform: rotate(-120deg);
-  }
-  to {
-    transform: rotate(120deg);
-  }
-}
-
-@keyframes turn-right {
-  from {
-    transform: rotate(90deg);
-  }
-  to {
-    transform: rotate(-150deg);
-  }
-}
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .knob {
-      animation: turn-left linear both;
-      animation-timeline: --item;
-      animation-range: cover 0% cover 100%;
-    }
-
-    .knob + .knob {
-      animation-name: turn-right;
-    }
-  }
 }

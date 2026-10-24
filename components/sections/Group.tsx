@@ -16,15 +16,15 @@ export function Group({ group }: { group: GroupContent }) {
   return (
     <div className="mt-[72px]">
       <div className="mb-8 flex flex-wrap items-center gap-x-[18px] gap-y-2.5">
-        <h3 className="slide-on-enter text-[clamp(1.5rem,3.4vw,2.1rem)] leading-[1.15] font-[750] tracking-[-0.02em]">
+        <h3 className="text-[clamp(1.5rem,3.4vw,2.1rem)] leading-[1.15] font-[750] tracking-[-0.02em]">
           <MarkerOnView color={group.marker}>{group.title}</MarkerOnView>
         </h3>
         <Note>{group.note}</Note>
         {group.lightSwitch && <LightSwitch className="ml-auto" />}
       </div>
       <div className={classNames('grid gap-x-10 gap-y-11', columns[group.items.length])}>
-        {group.items.map((item) => (
-          <Item key={item.title} item={item} />
+        {group.items.map((item, i) => (
+          <Item key={item.title} item={item} column={i % 4} />
         ))}
       </div>
     </div>

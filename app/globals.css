@@ -141,17 +141,17 @@
     stroke-linejoin: round;
   }
 
-  /* Every item is a scroll timeline its drawings and objects can follow. */
+  /* Every item is a scroll timeline; the sun lamp follows it. */
   .item {
     view-timeline-name: --item;
   }
 
-  /* Resting poses for the parts that move on scroll; without scroll-driven animation they stay here. */
-  .spin-on-scroll {
+  /* Resting poses of the sports drawings; they move once when they arrive and come back here. */
+  .wheel {
     transform-box: view-box;
   }
 
-  .ride-on-scroll {
+  .rider {
     transform: translate(80px, 61px) rotate(25deg);
   }
 
@@ -192,7 +192,9 @@
 
 /*
  * Motion. On load: the hello is highlighted word by word (HeroTitle), then the photo lands, then the squiggle
- * and the arrow are drawn. On scroll: titles slide in, items rise, drawings draw, the timeline fills.
+ * and the arrow are drawn. On the way down, every item, section title and company arrives once, the first time
+ * it comes into view (RevealObserver sets data-revealed), and then stays still, so the page moves one to one
+ * with the scroll. Only the sun lamp, the timeline line and the hero photo's tilt follow the scroll itself.
  * Only transforms and strokes move: text is never hidden, and nothing here runs with reduced motion.
  */
 @keyframes draw {
@@ -207,42 +209,18 @@
   }
 }
 
-@keyframes slide-in {
-  from {
-    transform: translateX(-32px);
-  }
-}
-
-@keyframes rise-left {
-  from {
-    transform: translateY(56px) rotate(-1.5deg);
-  }
-}
-
-@keyframes rise-right {
-  from {
-    transform: translateY(72px) rotate(1.5deg);
-  }
-}
-
 @keyframes pop {
   from {
     transform: scale(0.6);
   }
 }
 
-@keyframes nudge {
-  from {
-    transform: translateX(18px);
-  }
-}
-
 @keyframes slap {
   0% {
-    transform: rotate(-13deg) scale(1.6);
+    transform: rotate(-13deg) scale(1.5);
   }
-  70% {
-    transform: rotate(3deg) scale(0.9);
+  65% {
+    transform: rotate(3deg) scale(0.92);
   }
   100% {
     transform: none;
@@ -256,38 +234,33 @@
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(540deg);
+  from {
+    transform: rotate(-360deg);
   }
 }
 
 @keyframes ride {
-  0% {
-    transform: translate(34px, 40px) rotate(23deg);
-  }
-  50% {
-    transform: translate(80px, 61px) rotate(25deg);
-  }
-  100% {
-    transform: translate(126px, 83px) rotate(26deg);
+  from {
+    transform: translate(30px, 38px) rotate(22deg);
   }
 }
 
 @keyframes waves {
-  to {
-    transform: translateX(120px);
+  from {
+    transform: translateX(-40px);
   }
 }
 
 @keyframes bob {
   0%,
-  50%,
   100% {
-    transform: translateY(0);
+    transform: none;
   }
-  25%,
-  75% {
-    transform: translateY(-4px);
+  30% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(2px);
   }
 }
 
@@ -329,8 +302,79 @@
   .doodle-cursor {
     animation: blink 1.1s step-end infinite;
   }
+
+  /* Before arriving (only once the observer runs): a little lower, strokes undrawn, the rider at the top. */
+  :root[data-motion] .rise[data-reveal]:not([data-revealed]) {
+    translate: 0 16px;
+  }
+
+  :root[data-motion] [data-reveal]:not([data-revealed]) .nudge-on-enter {
+    translate: 14px 0;
+  }
+
+  :root[data-motion]
+    [data-reveal]:not([data-revealed])
+    :is(.draw-step-1, .draw-step-2, .draw-step-3, .draw-on-enter, .trail-reveal) {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  :root[data-motion] [data-reveal]:not([data-revealed]) .rider {
+    transform: translate(30px, 38px) rotate(22deg);
+  }
+
+  /* Arriving: once, with a row coming in one item after the other (--i is the column, or the role). */
+  .rise,
+  .nudge-on-enter {
+    transition: translate 450ms var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+
+  [data-revealed] :is(.draw-step-1, .draw-step-2, .draw-step-3, .draw-on-enter, .trail-reveal) {
+    stroke-dasharray: 1;
+    animation: draw 700ms var(--ease-in-out) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 100ms);
+  }
+
+  [data-revealed] .draw-step-2 {
+    animation-delay: calc(var(--i, 0) * 60ms + 300ms);
+  }
+
+  [data-revealed] :is(.draw-step-3, .trail-reveal) {
+    animation-delay: calc(var(--i, 0) * 60ms + 500ms);
+  }
+
+  [data-revealed] .wheel {
+    animation: spin 1400ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 200ms);
+  }
+
+  [data-revealed] .rider {
+    animation: ride 1300ms var(--ease-in-out) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 300ms);
+  }
+
+  [data-revealed] .waves {
+    animation: waves 1800ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 200ms);
+  }
+
+  [data-revealed] .swimmer {
+    animation: bob 1800ms var(--ease-in-out) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 200ms);
+  }
+
+  [data-revealed] .slap-on-enter {
+    animation: slap 550ms var(--ease-out) both;
+  }
+
+  [data-revealed] .pop-on-enter {
+    animation: pop 400ms var(--ease-spring) both;
+    animation-delay: calc(var(--i, 0) * 70ms + 150ms);
+  }
 }
 
+/* What follows the scroll itself: the hero photo's tilt and the timeline line (the lamp has its own module). */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .polaroid-tilt {
@@ -339,95 +383,11 @@
       animation-range: 0 70vh;
     }
 
-    .slide-on-enter {
-      animation: slide-in linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 100%;
-    }
-
-    .rise-on-enter {
-      animation: rise-left linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 100%;
-    }
-
-    .rise-on-enter:nth-child(even) {
-      animation-name: rise-right;
-    }
-
-    :is(.draw-step-1, .draw-step-2, .draw-step-3, .draw-on-enter, .timeline-line, .trail-reveal) {
+    .timeline-line {
       stroke-dasharray: 1;
       animation: draw linear both;
-    }
-
-    .draw-step-1,
-    .draw-step-2,
-    .draw-step-3,
-    .trail-reveal {
-      animation-timeline: --item;
-    }
-
-    .draw-step-1 {
-      animation-range: entry 20% cover 35%;
-    }
-
-    .draw-step-2 {
-      animation-range: entry 50% cover 40%;
-    }
-
-    .draw-step-3,
-    .trail-reveal {
-      animation-range: entry 80% cover 45%;
-    }
-
-    .draw-on-enter {
-      animation-timeline: view();
-      animation-range: entry 40% cover 40%;
-    }
-
-    .timeline-line {
       animation-timeline: --timeline;
       animation-range: entry 15% cover 70%;
-    }
-
-    .pop-on-enter {
-      animation: pop linear both;
-      animation-timeline: view();
-      animation-range: entry 30% entry 90%;
-    }
-
-    .nudge-on-enter {
-      animation: nudge linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 80%;
-    }
-
-    .slap-on-enter {
-      animation: slap linear both;
-      animation-timeline: view();
-      animation-range: entry 10% entry 90%;
-    }
-
-    .spin-on-scroll,
-    .waves-on-scroll,
-    .bob-on-scroll {
-      animation: spin linear both;
-      animation-timeline: --item;
-      animation-range: cover 0% cover 100%;
-    }
-
-    .waves-on-scroll {
-      animation-name: waves;
-    }
-
-    .bob-on-scroll {
-      animation-name: bob;
-    }
-
-    .ride-on-scroll {
-      animation: ride linear both;
-      animation-timeline: --item;
-      animation-range: entry 30% cover 85%;
     }
   }
 }

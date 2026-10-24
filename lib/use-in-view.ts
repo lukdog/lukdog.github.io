@@ -3,10 +3,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export function useInView<T extends Element>({
-  once = false,
-  rootMargin,
-}: { once?: boolean; rootMargin?: string } = {}) {
+type Options = { once?: boolean; rootMargin?: string; threshold?: number };
+
+export function useInView<T extends Element>({ once = false, rootMargin, threshold }: Options = {}) {
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
 
@@ -18,11 +17,11 @@ export function useInView<T extends Element>({
         setInView(entry.isIntersecting);
         if (entry.isIntersecting && once) observer.disconnect();
       },
-      { rootMargin }
+      { rootMargin, threshold }
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [once, rootMargin]);
+  }, [once, rootMargin, threshold]);
 
   return [ref, inView] as const;
 }
