@@ -274,7 +274,7 @@ export const site = {
     title: 'Say hi',
     circled: 'hi',
     text: "For any question, send me an email and I'll get back to you. I swear.",
-    email: '',
+    email: 'hello@lukdog.com',
     socials: [
       { label: 'GitHub', href: 'https://github.com/lukdog' },
       { label: 'LinkedIn', href: 'https://it.linkedin.com/in/lucadoglione' },
