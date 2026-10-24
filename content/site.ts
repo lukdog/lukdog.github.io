@@ -279,7 +279,6 @@ export const site = {
       { label: 'GitHub', href: 'https://github.com/lukdog' },
       { label: 'LinkedIn', href: 'https://it.linkedin.com/in/lucadoglione' },
       { label: 'Instagram', href: 'https://instagram.com/lukdog8' },
-      { label: 'Medium', href: 'https://medium.com/@lukdog' },
     ],
   },
 
