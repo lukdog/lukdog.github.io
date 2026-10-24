@@ -10,14 +10,21 @@ const toneClass: Record<Tone, string> = {
   faint: 'stroke-ink-faint stroke-[1.8]',
 };
 
-export function Doodle({ children, clip = false }: { children: React.ReactNode; clip?: boolean }) {
+type DoodleProps = {
+  children: React.ReactNode;
+  clip?: boolean;
+  /** Moves a narrow drawing towards the left edge, so every drawing starts where the text starts. */
+  shift?: number;
+};
+
+export function Doodle({ children, clip = false, shift }: DoodleProps) {
   return (
     <svg
       className={classNames('block h-[110px] w-40', clip ? 'overflow-hidden' : 'overflow-visible')}
       viewBox="0 0 160 110"
       aria-hidden
     >
-      {children}
+      {shift ? <g transform={`translate(${shift} 0)`}>{children}</g> : children}
     </svg>
   );
 }

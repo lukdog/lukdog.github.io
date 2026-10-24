@@ -18,7 +18,7 @@ export function CodeDoodle() {
 
 export function WhyDoodle() {
   return (
-    <Doodle>
+    <Doodle shift={-20}>
       <Stroke d="M34 10 Q80 7 126 11 Q129 50 126 88 L110 99 Q72 101 35 98 Q30 55 34 10 Z" />
       <Stroke d="M126 88 Q113 87 110 99" />
       <Label x={80} y={62} size="big">
@@ -90,7 +90,7 @@ export function WebDoodle() {
 
 export function MobileDoodle() {
   return (
-    <Doodle>
+    <Doodle shift={-40}>
       <Stroke d="M58 4 Q80 2 102 4 Q108 5 108 12 L108 98 Q108 106 101 106 Q80 108 59 106 Q52 105 52 98 L52 12 Q52 5 58 4 Z" />
       <Stroke d="M72 10 Q80 9 88 10" />
       <Stroke step={2} d="M62 28 L98 28 M62 42 L92 42 M62 56 L96 56" />

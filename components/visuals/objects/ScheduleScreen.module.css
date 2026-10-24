@@ -1,7 +1,9 @@
 /* The board, its pins and the red stand, with the screen's two views cross-fading (with a little blur) on top. */
+/* The stand is wider than the board: the margin keeps it from sticking out past the text edge. */
 .display {
   position: relative;
-  width: min(100%, 222px);
+  width: min(100% - 12px, 222px);
+  margin-left: 12px;
 }
 
 .pcb {
