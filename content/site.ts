@@ -23,7 +23,7 @@ export const site = {
     ],
     lead: 'I like to build things: software, products, and the architecture that keeps them together. Sometimes they also glow.',
     squiggle: 'build things',
-    byline: 'By day I lead engineering teams at Arduino (a Qualcomm company). Based in Turin.',
+    byline: 'At work I am an engineering manager in the software team at Arduino (a Qualcomm company). Based in Turin.',
     photo: {
       src: '/luca.jpg',
       alt: 'Luca at the seaside, smiling at the camera',
@@ -38,7 +38,7 @@ export const site = {
     title: 'Things I like doing',
     underline: 'orange',
     note: '(at work)',
-    intro: 'At work I build software products: the code, the architecture and the screens people use.',
+    intro: 'At work I build software products with my teams: the code, the architecture and the screens people use.',
     groups: [
       {
         title: 'Building software',
@@ -49,11 +49,6 @@ export const site = {
             visual: 'code',
             title: 'I write ~~bugs~~ code.',
             text: 'Mostly Go and TypeScript. Writing code is still the way I think best.',
-          },
-          {
-            visual: 'why',
-            title: 'I ask why, before how.',
-            text: 'Before I build something, I want to know who it is for and why it should exist.',
           },
           {
             visual: 'architecture',
@@ -89,6 +84,23 @@ export const site = {
           },
         ],
       },
+      {
+        title: 'Working with people',
+        marker: 'orange',
+        note: '(the part that is not code)',
+        items: [
+          {
+            visual: 'why',
+            title: 'I ask why, before how.',
+            text: 'Before I build something, I want to know who it is for and why it should exist.',
+          },
+          {
+            visual: 'teams',
+            title: 'I help teams ship.',
+            text: 'I lead three small teams, about ten people. My job is to remove what slows them down.',
+          },
+        ],
+      },
     ],
   },
 
@@ -113,17 +125,17 @@ export const site = {
           {
             year: '2023',
             title: 'Associate Engineering Manager',
-            text: 'Lead of the mobile and web teams in the Software & Cloud area: mobile apps, Arduino websites and the services around Arduino Cloud.',
+            text: 'I led the mobile and web teams in the Software & Cloud area: mobile apps, Arduino websites and the services around Arduino Cloud.',
           },
           {
             year: '2022',
             title: 'Senior Specialist Software Engineer',
-            text: 'Responsible for the web and mobile teams: microservices and React apps on one side, IoT Remote and Science Journal on the other. Also architecture, development and code review.',
+            text: 'I was responsible for the web and mobile teams: microservices and React apps on one side, IoT Remote and Science Journal on the other. I also worked on architecture, development and code review.',
           },
           {
             year: '2021',
             title: 'Senior Software Engineer',
-            text: 'Design and development of microservices and frontend applications.',
+            text: 'I designed and developed microservices and frontend applications.',
           },
         ],
       },
@@ -135,12 +147,12 @@ export const site = {
           {
             year: '2020',
             title: 'HMI Technical Leader',
-            text: 'Technical manager for prototypes with new technologies: research on modern and reusable UI, a team to manage, training and support.',
+            text: 'I led the prototypes built with new technologies: research on modern and reusable UI, plus a team to manage, train and support.',
           },
           {
             year: '2018',
             title: 'HMI Software Engineer',
-            text: 'Architect and developer for the Alfa Romeo Giulia and Stelvio infotainment, with attention to performance and code reuse.',
+            text: 'I was architect and developer for the Alfa Romeo Giulia and Stelvio infotainment, with attention to performance and code reuse.',
           },
         ],
       },
@@ -152,7 +164,7 @@ export const site = {
           {
             year: '2016',
             title: 'Software Engineer Consultant',
-            text: 'Consultant for Magneti Marelli in the infotainment area, as GUI developer and analyst in the HMI team.',
+            text: 'I worked as a consultant for Magneti Marelli in the infotainment area, as GUI developer and analyst in the HMI team.',
           },
         ],
       },
@@ -164,7 +176,7 @@ export const site = {
           {
             year: '2016',
             title: 'MSc in Computer Engineering',
-            text: 'Software and Digital Systems Engineering. Thesis on information security and forensic analysis.',
+            text: 'Software and Digital Systems Engineering. My thesis was on information security and forensic analysis.',
           },
           { year: '2014', title: 'BSc in Computer Engineering' },
         ],
@@ -173,7 +185,7 @@ export const site = {
         name: 'Aethia',
         span: '2014',
         marker: 'coral',
-        roles: [{ year: '2014', title: 'Intern', text: 'Four months of HPC configuration and testing.' }],
+        roles: [{ year: '2014', title: 'Intern', text: 'I spent four months on HPC configuration and testing.' }],
       },
     ],
   },
@@ -190,7 +202,7 @@ export const site = {
         marker: 'teal',
         note: '(no screens allowed)',
         items: [
-          { visual: 'bike', title: 'Gravel rides.', text: 'Long rides on gravel roads, far from any notification.' },
+          { visual: 'bike', title: 'Gravel rides.', text: 'Long rides on gravel roads, as far as my legs go.' },
           {
             visual: 'snowboard',
             title: 'Snowboarding.',
@@ -200,7 +212,7 @@ export const site = {
           {
             visual: 'swimming',
             title: 'Swimming.',
-            text: 'Lanes in the pool: the one place where no screen can follow me.',
+            text: 'Lanes in the pool: the best place to clear my head.',
           },
         ],
       },
@@ -223,7 +235,7 @@ export const site = {
           {
             visual: 'tvLight',
             title: 'A light behind the TV.',
-            text: 'The wall behind the screen glows with the colours of the picture, so the room feels bigger.',
+            text: 'The wall behind it glows with the same colours as the picture on the screen.',
           },
           {
             visual: 'ledGames',
@@ -235,7 +247,7 @@ export const site = {
       {
         title: 'Gadgets for my desk',
         marker: 'coral',
-        note: '(also a hobby)',
+        note: '(I use them every day)',
         items: [
           {
             visual: 'schedule',
@@ -245,12 +257,12 @@ export const site = {
           {
             visual: 'nessoHippo',
             title: 'A hippo that watches me work.',
-            text: 'It sits on my monitor and talks to Claude. Its colour follows how much I used it today, and it looks curious when an agent needs my input.',
+            text: 'It sits on my monitor and talks to Claude. Its mood follows how many tokens I used today, compared with a normal day, and it looks curious when an agent needs my input.',
           },
           {
             visual: 'macropad',
             title: 'A macropad with my shortcuts.',
-            text: 'Nineteen keys, two knobs and a tiny screen. I built a small web editor to program it.',
+            text: 'Seventeen keys, two knobs and a tiny screen. I built a small web editor to program it.',
           },
         ],
       },
@@ -261,7 +273,7 @@ export const site = {
     id: 'say-hi',
     title: 'Say hi',
     circled: 'hi',
-    text: "For any question, send me a mail and I'll get back to you. I swear.",
+    text: "For any question, send me an email and I'll get back to you. I swear.",
     email: '',
     socials: [
       { label: 'GitHub', href: 'https://github.com/lukdog' },

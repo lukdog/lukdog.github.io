@@ -99,3 +99,20 @@ export function MobileDoodle() {
     </Doodle>
   );
 }
+
+export function TeamsDoodle() {
+  return (
+    <Doodle>
+      <Label x={80} y={30}>
+        ship it!
+      </Label>
+      <Stroke d="M56 58 L100 58 L100 96 L56 96 Z M56 58 L66 48 L110 48 L100 58 M100 96 L110 86 L110 48" />
+      <Stroke step={2} d="M31 46 a7 7 0 1 0 -14 0 a7 7 0 1 0 14 0 M24 53 L24 76 L16 98 M24 76 L32 98 M24 62 L54 70" />
+      <Stroke
+        step={2}
+        d="M147 40 a7 7 0 1 0 -14 0 a7 7 0 1 0 14 0 M140 47 L140 70 L132 92 M140 70 L148 92 M140 56 L112 64"
+      />
+      <Stroke step={3} tone="coral" d="M78 58 L78 96 M78 58 L88 48" />
+    </Doodle>
+  );
+}

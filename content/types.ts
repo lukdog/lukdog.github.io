@@ -8,6 +8,7 @@ export type VisualKey =
   | 'why'
   | 'architecture'
   | 'integrations'
+  | 'teams'
   | 'pressMe'
   | 'web'
   | 'mobile'

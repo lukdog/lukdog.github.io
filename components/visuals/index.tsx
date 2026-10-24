@@ -2,7 +2,15 @@
 import type { ComponentType } from 'react';
 import type { VisualKey } from '@/content/types';
 import { BikeDoodle, SnowboardDoodle, SwimmingDoodle, TrekkingDoodle } from './doodles/outside';
-import { ArchitectureDoodle, CodeDoodle, IntegrationsDoodle, MobileDoodle, WebDoodle, WhyDoodle } from './doodles/work';
+import {
+  ArchitectureDoodle,
+  CodeDoodle,
+  IntegrationsDoodle,
+  MobileDoodle,
+  TeamsDoodle,
+  WebDoodle,
+  WhyDoodle,
+} from './doodles/work';
 import { LedGames } from './objects/LedGames';
 import { Macropad } from './objects/Macropad';
 import { MoodCube } from './objects/MoodCube';
@@ -17,6 +25,7 @@ export const visuals = {
   why: WhyDoodle,
   architecture: ArchitectureDoodle,
   integrations: IntegrationsDoodle,
+  teams: TeamsDoodle,
   pressMe: PressMe,
   web: WebDoodle,
   mobile: MobileDoodle,
