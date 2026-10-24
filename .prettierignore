@@ -1,0 +1,8 @@
+.next
+out
+node_modules
+public
+mockups
+.claude
+yarn.lock
+next-env.d.ts

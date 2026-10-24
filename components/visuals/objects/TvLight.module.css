@@ -1,0 +1,76 @@
+/* --tv-a and --tv-b are registered colours (globals.css), so a channel change fades instead of jumping. */
+.tv {
+  position: relative;
+  width: 210px;
+  height: 148px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    --tv-a 500ms ease,
+    --tv-b 500ms ease;
+}
+
+.glow {
+  position: absolute;
+  inset: -6px 4px 22px;
+  border-radius: 40px;
+  background: var(--tv-a);
+  opacity: var(--glow-alpha);
+  filter: blur(28px);
+}
+
+.body {
+  position: absolute;
+  inset: 0 0 20px;
+  box-sizing: border-box;
+  padding: 9px;
+  background: var(--paper-raised);
+  border: 2.5px solid var(--ink);
+  border-radius: 14px 16px 12px 18px / 16px 12px 18px 14px;
+  transition: transform 120ms var(--ease-out);
+}
+
+.tv:active .body {
+  transform: translateY(2px);
+}
+
+.screen {
+  display: block;
+  height: 100%;
+  border-radius: 7px 9px 6px 8px;
+  background: linear-gradient(160deg, var(--tv-a), var(--tv-b));
+}
+
+.feet {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 110px;
+  height: 20px;
+  transform: translateX(-50%);
+}
+
+.feet::before,
+.feet::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  width: 2.5px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.feet::before {
+  left: 16px;
+  transform: rotate(18deg);
+}
+
+.feet::after {
+  right: 16px;
+  transform: rotate(-18deg);
+}

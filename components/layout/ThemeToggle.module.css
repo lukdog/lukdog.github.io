@@ -1,0 +1,81 @@
+/* The sun and moon follow the theme on the page, so the morph also plays inside the view transition. */
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 140ms var(--ease-out);
+}
+
+.toggle:active {
+  transform: scale(0.94);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  overflow: visible;
+}
+
+.core {
+  fill: var(--orange);
+  stroke: var(--ink);
+  stroke-width: 1.8;
+  transform-origin: 16px 16px;
+  transition:
+    transform 450ms var(--ease-spring),
+    fill 300ms ease;
+}
+
+.rays {
+  transform-origin: 16px 16px;
+  transition:
+    transform 450ms var(--ease-out),
+    opacity 250ms ease;
+}
+
+.rays path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.bite {
+  transition: transform 450ms var(--ease-out);
+}
+
+:global(:root[data-theme='dark']) .core {
+  transform: scale(1.22);
+  fill: var(--ink);
+}
+
+:global(:root[data-theme='dark']) .rays {
+  transform: rotate(70deg) scale(0.3);
+  opacity: 0;
+}
+
+:global(:root[data-theme='dark']) .bite {
+  transform: translate(-15px, -2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :global(:root:not([data-theme='dark'])) .toggle:hover .rays {
+    transform: rotate(25deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle,
+  .core,
+  .rays,
+  .bite {
+    transition: none;
+  }
+}

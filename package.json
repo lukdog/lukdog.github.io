@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "lint": "eslint .",
-    "prettier-format": "prettier --config .prettierrc './**/*.ts*' --write"
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "classnames": "^2.3.2",

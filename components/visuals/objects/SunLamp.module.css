@@ -1,0 +1,101 @@
+/* The day is one animation, from dawn to night; scroll scrubs it, or a negative delay parks it at the local time. */
+.lamp {
+  width: min(100%, 230px);
+  height: auto;
+  overflow: visible;
+  animation: daylight 1s linear paused both;
+  animation-delay: var(--sun-at, -0.5s);
+}
+
+.orbit {
+  transform-box: view-box;
+  transform-origin: 140px 160px;
+  animation: orbit 1s linear paused both;
+  animation-delay: var(--sun-at, -0.5s);
+}
+
+.sun {
+  fill: var(--lamp);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.glow {
+  fill: var(--lamp);
+  opacity: var(--glow-alpha);
+}
+
+.cone {
+  fill: var(--lamp);
+  opacity: 0.22;
+}
+
+.light {
+  fill: var(--lamp);
+}
+
+.arc {
+  fill: none;
+  stroke: var(--ink-faint);
+  stroke-width: 1.6;
+  stroke-dasharray: 2 6;
+  stroke-linecap: round;
+}
+
+.label {
+  font: 600 17px var(--font-hand);
+  fill: var(--ink-faint);
+}
+
+.ink,
+.shade {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.shade {
+  fill: var(--paper-raised);
+}
+
+@keyframes daylight {
+  0% {
+    --lamp: var(--dawn);
+  }
+  25% {
+    --lamp: var(--morning);
+  }
+  50% {
+    --lamp: var(--noon);
+  }
+  78% {
+    --lamp: var(--dusk);
+  }
+  100% {
+    --lamp: var(--night);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(-80deg);
+  }
+  to {
+    transform: rotate(80deg);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .lamp,
+    .orbit {
+      animation-play-state: running;
+      animation-duration: auto;
+      animation-delay: 0s;
+      animation-timeline: --item;
+      animation-range: cover 10% cover 80%;
+    }
+  }
+}

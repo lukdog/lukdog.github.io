@@ -8,27 +8,31 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Lint, typecheck and build
     timeout-minutes: 15
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: 'yarn'
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
+
+      - name: Check formatting
+        run: yarn format:check
 
       - name: Lint
-        run: yarn run lint
+        run: yarn lint
+
+      - name: Typecheck
+        run: yarn typecheck
 
       - name: Build
-        run: yarn run build
+        run: yarn build
