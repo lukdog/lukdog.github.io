@@ -6,7 +6,7 @@ import { ThemeToggle } from './ThemeToggle';
 export function Header({ name, nav }: { name: string; nav: Link[] }) {
   return (
     <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-6 gap-y-1 pt-6 min-[860px]:grid-cols-[minmax(0,1fr)_auto_auto]">
-      <a href="#hello" className="text-ink justify-self-start text-lg font-bold tracking-[-0.01em] no-underline">
+      <a href="#top" className="text-ink justify-self-start text-lg font-bold tracking-[-0.01em] no-underline">
         {name}
       </a>
       <nav
