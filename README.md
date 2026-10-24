@@ -75,4 +75,4 @@ The pre-commit hook runs lint and typecheck; CI also checks formatting and build
   [Caveat](https://fonts.google.com/specimen/Caveat) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/),
   self-hosted with `next/font`
 - The highlighter: [rough-notation](https://github.com/rough-stuff/rough-notation) by Preet Shihn
-- The previous version of this site is in the history of `main`
+- The previous version of this site is on the `old` branch
