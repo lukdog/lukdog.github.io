@@ -3,11 +3,10 @@ import type { Item as ItemContent } from '@/content/types';
 import { RichText } from '@/components/ui/RichText';
 import { visuals } from '@/components/visuals';
 
-/** `column` staggers the entrance, so a row arrives one item after the other. */
-export function Item({ item, column }: { item: ItemContent; column: number }) {
+export function Item({ item }: { item: ItemContent }) {
   const Visual = visuals[item.visual];
   return (
-    <article data-reveal className="item rise min-w-0" style={{ '--i': column } as React.CSSProperties}>
+    <article className="item rise-on-scroll min-w-0">
       <Visual />
       <h4 className="mt-4 mb-1.5 text-xl leading-tight font-bold tracking-[-0.01em]">
         <RichText text={item.title} />

@@ -23,8 +23,8 @@ export function Group({ group }: { group: GroupContent }) {
         {group.lightSwitch && <LightSwitch className="ml-auto" />}
       </div>
       <div className={classNames('grid gap-x-10 gap-y-11', columns[group.items.length])}>
-        {group.items.map((item, i) => (
-          <Item key={item.title} item={item} column={i % 4} />
+        {group.items.map((item) => (
+          <Item key={item.title} item={item} />
         ))}
       </div>
     </div>

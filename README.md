@@ -43,10 +43,13 @@ only while they are on screen.
 
 ## Motion
 
-The page moves one to one with the scroll. Items, titles and companies arrive once, the first time they come into
-view (`components/ui/RevealObserver.tsx` marks them, `app/globals.css` plays the entrance), and then stay still.
-Only two things follow the scroll itself, because there the scroll is the point: the sun lamp (scrolling is the day
-passing) and the timeline line, both as CSS scroll-driven animations.
+The cards follow the scroll while they come in: they rise, their drawings draw and the sports play their move, with
+the columns a little apart so a row arrives like a wave. Once a card has arrived it stays still. These are CSS
+scroll-driven animations (`animation-timeline: view()`) in `app/globals.css`.
+
+Section titles and companies arrive once, the first time they come into view (`components/ui/RevealObserver.tsx`
+marks them). Two things follow the scroll all the way, because there the scroll is the point: the sun lamp (scrolling
+is the day passing) and the timeline line.
 
 Living objects (the LED game, the hippo, the schedule screen) move only while at least half of them is on screen, and
 pause while the page is scrolling (`lib/use-alive.ts`). Only transforms and strokes animate: text is never hidden. With
