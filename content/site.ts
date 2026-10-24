@@ -26,7 +26,7 @@ export const site = {
     byline: 'At work I am an engineering manager in the software team at Arduino (a Qualcomm company). Based in Turin.',
     photo: {
       src: '/luca.jpg',
-      alt: 'Luca at the seaside, smiling at the camera',
+      alt: 'Luca with orange sunglasses, in a park with palm trees',
       width: 660,
       height: 880,
       caption: "that's me",
