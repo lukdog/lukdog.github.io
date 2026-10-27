@@ -2,7 +2,9 @@
 
 Luca's personal site: one page drawn like a notebook, deployed to [lukdog.com](https://lukdog.com).
 Read `README.md` first: it explains the stack, the content model, the structure and the motion. This file only adds
-the rules and the traps that the README does not cover.
+the rules and the traps that the README does not cover. `docs/decisions.md` says why the site is the way it is and
+what was dropped: read it before discussing design, copy or motion, and update it in the same commit when a decision
+changes.
 
 ## Commands
 
